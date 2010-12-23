@@ -11,13 +11,13 @@ Vcs-Browser: http://git.grml.org/?p=grml-scripts.git
 
 Package: grml-scripts
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, less, dialog, perl, zsh, dash, links | w3m | links2, screen, grml-network, grml-etc-core, libterm-readkey-perl, lzop, lockfile-progs
+Depends: ${shlibs:Depends}, ${misc:Depends}, less, dialog, perl, zsh, dash, links | w3m | links2, screen, grml-network, grml-etc-core, libterm-readkey-perl, lzop, lockfile-progs, grml-scripts-core (>= 1.4.1)
 Suggests: ruby, python, grml-x, ipcalc, hwinfo, antiword, grml-etc, grml-rebuildfstab, grml-files, grml-hwinfo, pptp-linux, flite, wmii, mutt, slrn, grml-docs, grml-autoconfig (>= 0.6.9), dirvish, sudo, idesk, xlockmore, python-dbus, notification-daemon, grml-quickconfig, libwebservice-google-suggest-perl
 Conflicts: scanmodem, grml-etc-core (<< 0.1-30)
 Description: some small scripts which should make life easier
- Some scripts which should make life easier. For example:
- code2color, grml-mutt, grml-slrn, iimage, lesspipe.sh
- make_chroot_jail.sh, sepdate.pl, sepdate.rb, sepdate.sh*, wwwis.
+ Some scripts which should make life easier. For example: grml-mutt,
+ grml-slrn, iimage, make_chroot_jail.sh, sepdate.pl, sepdate.rb,
+ sepdate.sh*, wwwis.
  .
  Notice: not all the packages which are required in all the scripts
  are in the "Depends:" line. If you want to get a full featured
