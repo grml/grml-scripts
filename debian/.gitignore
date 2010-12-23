@@ -1,0 +1,6 @@
+files
+grml-scripts.debhelper.log
+grml-scripts.postinst.debhelper
+grml-scripts.prerm.debhelper
+grml-scripts.substvars
+grml-scripts
