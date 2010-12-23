@@ -15,13 +15,16 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, less, dialog, perl, zsh, dash, link
 Suggests: ruby, python, grml-x, ipcalc, hwinfo, antiword, grml-etc, grml-rebuildfstab, grml-files, grml-hwinfo, pptp-linux, flite, wmii, mutt, slrn, grml-docs, grml-autoconfig (>= 0.6.9), dirvish, sudo, idesk, xlockmore, python-dbus, notification-daemon, grml-quickconfig, libwebservice-google-suggest-perl
 Conflicts: scanmodem, grml-etc-core (<< 0.1-30)
 Description: some small scripts which should make life easier
- Some scripts which should make life easier. For example: grml-mutt,
- grml-slrn, iimage, make_chroot_jail.sh, sepdate.pl, sepdate.rb,
- sepdate.sh*, wwwis.
+ Some scripts which should make life easier.
+ .
+ While the package grml-scripts-core only contains some core scripts
+ needed by grml-etc-core, this package contains some other scripts in
+ addition, such as: grml-mutt, grml-slrn, iimage, make_chroot_jail.sh,
+ sepdate.pl, sepdate.rb, sepdate.sh*, wwwis.
  .
  Notice: not all the packages which are required in all the scripts
  are in the "Depends:" line. If you want to get a full featured
  grml-scripts-package install the packages from the 'Suggests' line
  too or just use the grml(-large)-system.
  .
- For more details take a look at the manpage grml-scripts.
+ For more details take a look at the grml-scripts manpage.
