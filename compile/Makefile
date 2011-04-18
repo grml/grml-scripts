@@ -1,4 +1,4 @@
-PROGS = ip-screen pong vmware-detect align cpu-screen dpkg_not_running reread_partition_table
+PROGS = pong vmware-detect align dpkg_not_running reread_partition_table
 
 #ifndef CFLAGS
 CFLAGS = -O2 -Wall -s
@@ -13,12 +13,6 @@ CC = gcc
 #endif
 
 all: $(PROGS)
-
-ip-screen: ip-screen.c
-	diet $(CC) $(CFLAGS) -o $@ $^
-
-cpu-screen: cpu-screen.c
-	diet $(CC) $(CFLAGS) -o $@ $^
 
 pong: pong.c
 
