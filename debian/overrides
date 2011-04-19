@@ -13,6 +13,6 @@ grml-scripts: script-with-language-extension usr/sbin/prepare_ramdisk.sh
 grml-scripts: script-with-language-extension usr/sbin/prepare_tmpfs.sh
 grml-scripts: script-with-language-extension usr/sbin/suspenduser_gui.sh
 grml-scripts: script-with-language-extension usr/sbin/suspenduser.sh
-grml-scripts: statically-linked-binary ./usr/bin/vmware-detect
-grml-scripts: statically-linked-binary ./usr/sbin/dpkg_not_running
-grml-scripts: statically-linked-binary ./usr/sbin/reread_partition_table
+grml-scripts: statically-linked-binary usr/bin/vmware-detect
+grml-scripts: statically-linked-binary usr/sbin/dpkg_not_running
+grml-scripts: statically-linked-binary usr/sbin/reread_partition_table
