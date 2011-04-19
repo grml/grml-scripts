@@ -1,8 +1,24 @@
-grml-scripts (1.4.3+nmu1) UNRELEASED; urgency=low
+grml-scripts (1.4.3) unstable; urgency=low
 
-  * Split grml-scripts into grml-scripts and grml-scripts-core (NMU).
+  The "Split it" release. Thanks to Sebastian Boehm for splitting off
+  grml-scripts-core, allowing use of some utilities on plain Debian
+  systems.
 
- -- Sebastian Boehm <sebastian@sometimesfood.org>  Mon, 20 Dec 2010 23:49:48 +0100
+  [ Sebastian Boehm ]
+  * [6855211] Split grml-scripts into grml-scripts and grml-scripts-core
+  * [7c936a9] Add pointer to grml-scripts-core to description
+  * [0197b56] Add automatically generated files to .gitignore
+  * [3538df3] Add debian/source/format
+  * [24eec6f] Only clean compile dir if it exists
+
+  [ Christian Hofstaedtler ]
+  * [97f5add] update package description
+  * [ebbf278] various man page fixes
+  * [24a6270] remove tinyp2p
+  * [9191405] remove perl shebang hack from wwwis
+  * [1fb38d2] update lintian overrides for newer lintian version
+
+ -- Christian Hofstaedtler <ch@grml.org>  Tue, 19 Apr 2011 15:28:39 +0200
 
 grml-scripts (1.4.2) unstable; urgency=low
 
