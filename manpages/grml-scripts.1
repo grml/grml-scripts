@@ -8,7 +8,7 @@
 .\"###############################################################
 .TH grml\-scripts 1 "grml-scripts"
 .SH "NAME"
-grml\-scripts \- script collection for the grml distribution
+grml\-scripts \- script collection for the Grml distribution
 .\"#######################################################
 .SH "USER SCRIPTS"
 
@@ -51,14 +51,14 @@ grep for pattern and cut it
 make a readonly-file writeable (not necessary when using
 unionfs)
 .SS grml-config-user
-Configuration interface for user tasks on the grml system.
+Configuration interface for user tasks on the Grml system.
 .SS grml-hwinfo
 collect hardware information and write it to info.tar.bz2
 .SS grml-info
-start browser with documentation for grml
+start browser with documentation for Grml
 .SS grml-init
 fix tty permissions and run screen and zsh (notice: not required for
-interactive usage but only for startup of grml system)
+interactive usage but only for startup of Grml system)
 .SS grml-lock
 lock virtual consoles
 .SS grml-mutt
@@ -70,7 +70,7 @@ switch keyboard layout
 .SS grml-slrn
 configuration script for newsreader slrn
 .SS grml-start
-start browser with information page on grml
+start browser with information page on Grml
 .SS hgrep.sh
 highlight grep output
 .SS iimage
@@ -96,7 +96,7 @@ perl script by Jeffrey Friedl - a combo of find and grep
 .SS sepdate.pl sepdate.rb sepdate.sh
 "endless september"
 .SS soundtest
-Test sound on your grml system via playing a ogg-file.
+Test sound on your Grml system via playing a ogg-file.
 Provide the files you want to play as arguments,
 adjust player which should be used for playing the files
 via environment variable PLAYER. Calling the script without
@@ -142,9 +142,9 @@ Returns 0 if it is not running and 1 if it is already running.
 rebuild your Debian dpkg/apt status file if it got
 corrupted by a system crash.
 .SS grml-config
-Central configuration interface to configure the grml system.
+Central configuration interface to configure the Grml system.
 .SS grml-config-root
-Configuration interface for admin tasks on the grml system.
+Configuration interface for admin tasks on the Grml system.
 .SS grml-hostname
 Simple frontend to configure hostname in the corresponding
 files. When executed without a parameter a dialog based
@@ -152,7 +152,7 @@ frontend will be used, when given a parameter the provided
 parameter will be used as hostname and script is executed in
 non-interactive mode.
 .SS grml-postfix
-Configuration script to set up postfix on grml system for
+Configuration script to set up postfix on Grml system for
 use with TLS.
 .SS grml-tpm
 Set up a system for use with TPM technology.
@@ -186,11 +186,16 @@ Remove blacklisted module from /etc/modprobe.d/grml.
 
 .SH "BUGS"
 Probably. Please report any bugs you find and report
-feedback and suggestions to the grml-team.
+feedback and suggestions to the Grml team.
 See http://grml.org/bugs/ for further information.
 Thank you!
 
+.SH "SEE ALSO"
+grml-scripts-core(8)
+
 .SH "COPYRIGHT"
-Copyright \(co 2004-2009 by the grml-team.
+This man page is copyright \(co 2004-2011 by the Grml team.
+Included scripts are under various copyrights, please see
+the sources.
 .\"###### END OF FILE ##########################################################
 .\" vim:tw=60
