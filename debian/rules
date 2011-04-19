@@ -128,7 +128,6 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/soundtest.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/suspenduser.sh.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/suspenduser_gui.sh.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/tinyp2p.py.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/twebgal.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/unblacklist.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/unbleach.pl.1.gz \
