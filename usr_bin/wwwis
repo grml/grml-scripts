@@ -1,7 +1,3 @@
-# use perl -*- Perl -*- This line used to have a : at the start
-  eval 'exec perl -w -S $0 ${1+"$@"}'
-  if 0;
-# clever way of calling perl on this script : stolen from weblint
 #!/usr/bin/perl -w
 #
 # wwwis: adds HEIGHT= and WIDTH= to images referenced in specified HTML file.

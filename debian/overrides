@@ -1,4 +1,3 @@
-grml-scripts: executable-not-elf-or-script ./usr/bin/wwwis
 grml-scripts: script-with-language-extension usr/bin/bincompare.pl
 grml-scripts: script-with-language-extension usr/bin/cpufreq-detect.sh
 grml-scripts: script-with-language-extension usr/bin/gsuggest.pl
