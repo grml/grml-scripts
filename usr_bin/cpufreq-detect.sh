@@ -120,8 +120,8 @@ case "$VENDOR_ID" in
         # K7
         MODULE=powernow-k7
         ;;
-        15)
-        # K8
+        15|16|20)
+        # K8 (=15), Phenom (=16), AMD E-350 all-in-one CPUs (=20)
         MODULE=powernow-k8
         ;;
     esac
