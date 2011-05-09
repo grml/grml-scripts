@@ -1,3 +1,9 @@
+grml-scripts (1.4.4) unstable; urgency=low
+
+  * [6d23e87] enable powernow-k8 for more AMD CPUs
+
+ -- Christian Hofstaedtler <ch@grml.org>  Mon, 09 May 2011 23:12:08 +0200
+
 grml-scripts (1.4.3) unstable; urgency=low
 
   The "Split it" release. Thanks to Sebastian Boehm for splitting off
