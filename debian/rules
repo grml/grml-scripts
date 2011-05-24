@@ -73,7 +73,6 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/caps-ctrl.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/cicqhist.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/code2html.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/cpufreq-detect.sh.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/dir2html.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/dpkg_not_running.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/dpkg-rebuild.1.gz \
