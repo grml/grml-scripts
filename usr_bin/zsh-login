@@ -47,10 +47,7 @@ case "$CMDLINE" in
       ;;
    *) # by default run grml-quickconfig, but only if running as root
       if [ "$(id -u)" = "0" ] ; then
-	 # do not run grml-quickconfig on grml-small
-	 if ! grep -q small /etc/grml_version ; then
-            which grml-quickconfig &>/dev/null && grml-quickconfig
-         fi
+         which grml-quickconfig &>/dev/null && grml-quickconfig
       fi
 esac
 
