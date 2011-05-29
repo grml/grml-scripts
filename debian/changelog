@@ -1,3 +1,13 @@
+grml-scripts (1.4.5) unstable; urgency=low
+
+  [ Ulrich Dangel ]
+  * [7b6b106] Always execute grml-quickconfig if available.
+
+  [ Christian Hofstaedtler ]
+  * [720dd72] Remove cpufreq-detect.sh.
+
+ -- Christian Hofstaedtler <ch@grml.org>  Sun, 29 May 2011 14:32:11 +0200
+
 grml-scripts (1.4.4) unstable; urgency=low
 
   * [6d23e87] enable powernow-k8 for more AMD CPUs
