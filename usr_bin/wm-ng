@@ -6,11 +6,19 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
-gkrellm -g -1+26 &
-
-(sleep 2; idesk &) &
-
-fluxbox
+# start Grml's fluxbox setup only if fluxbo is present
+if [ -x "$(which fluxbox 2>/dev/null)" ] ; then
+  gkrellm -g -1+26 &
+  (sleep 2; idesk &) &
+  fluxbox
+elif [ "$(basename $(readlink -f $(which x-window-manager 2>/dev/null)))" != "fluxbox" ] && \
+     [ "$(basename $(readlink -f $(which x-window-manager 2>/dev/null)))" != "$(basename $0)" ] ; then
+    # fall back unless it's set to fluxbox or points back to wm-ng
+    x-window-manager
+else
+  echo "Error: fluxbox not present + x-window-manager is not an alternative neither." >&2
+  exit 1
+fi
 
 exit $?
 
