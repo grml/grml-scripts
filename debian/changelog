@@ -1,3 +1,15 @@
+grml-scripts (1.4.6) unstable; urgency=low
+
+  [ Michael Prokop ]
+  * [69c78be] Bump Standards-Version to 3.9.2.
+  * [e229581] wm-ng: make sure fluxbox is present, otherwise
+    fall back to x-window-manager or error out.
+
+  [ Ulrich Dangel ]
+  * [3a552f4] Add lodgeit to grml-scripts.
+
+ -- Michael Prokop <mika@grml.org>  Thu, 07 Jul 2011 01:52:42 +0200
+
 grml-scripts (1.4.5) unstable; urgency=low
 
   [ Ulrich Dangel ]
