@@ -8,6 +8,8 @@ Standards-Version: 3.9.2
 Homepage: http://git.grml.org/?p=grml-scripts.git
 Vcs-git: git://git.grml.org/grml-scripts.git
 Vcs-Browser: http://git.grml.org/?p=grml-scripts.git
+Origin: Grml
+Bugs: mailto:bugs@grml.org
 
 Package: grml-scripts
 Architecture: any
