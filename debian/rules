@@ -41,6 +41,7 @@ install: build
 	install -m 755 compile/vmware-detect          debian/grml-scripts/usr/bin/vmware-detect
 	install -m 755 compile/dpkg_not_running       debian/grml-scripts/usr/sbin/dpkg_not_running
 	install -m 755 compile/reread_partition_table debian/grml-scripts/usr/sbin/reread_partition_table
+	install -m 755 compile/grml-runtty             debian/grml-scripts/sbin/grml-runtty
 
 # Build architecture-independent files here.
 binary-indep: build install
@@ -92,13 +93,13 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-hostname.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-info.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-init.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-init-screen.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-lock.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-mutt.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-postfix.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-soundtest.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-lang.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-resolution.1.gz \
+		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-runtty.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-slrn.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-start.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-tpm.1.gz \
@@ -139,7 +140,6 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/XF86AudioLowerVolume.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/XF86AudioMute.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/XF86AudioRaiseVolume.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/zsh-login.1.gz \
 		/usr/share/man/man1/gsuggest.1.gz     /usr/share/man/man1/gsuggest.pl.1.gz
 	dh_strip
 	dh_compress
