@@ -1,3 +1,20 @@
+grml-scripts (1.4.7) unstable; urgency=low
+
+  * [fd86ffc] Run our TTYs with our own tty runner
+    (this adds grml-runtty) (Closes: issue1058)
+  * [80bb009] Remove gsuggest
+  * [b228766] Fix spelling error in grml-scripts.1
+  * [695d3a5] Add description of lodgeit to grml-scripts(1)
+  * [3c1d083] Add debian/control headers Origin, Bugs
+  * Packaging cleanup:
+    * [7d2cc40] Remove Conflicts on purely-virtual scanmodem
+    * [1950baa] Move Conflicts grml-autoconfig << 0.9.19 to Breaks
+    * [6600cbb] Remove version from grml-autoconfig Suggests
+    * [5185095] Remove Conflicts grml-etc-core version from 2006
+    * [f42a437] Fix lintian W: debian-rules-missing-recommended-target
+
+ -- Christian Hofstaedtler <ch@grml.org>  Mon, 26 Sep 2011 23:46:40 +0200
+
 grml-scripts (1.4.6) unstable; urgency=low
 
   [ Michael Prokop ]
