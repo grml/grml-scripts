@@ -14,7 +14,7 @@ Bugs: mailto:bugs@grml.org
 Package: grml-scripts
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, less, dialog, perl, zsh, dash, links | w3m | links2, screen, grml-network, grml-etc-core, libterm-readkey-perl, lockfile-progs, grml-scripts-core
-Suggests: ruby, python, grml-x, ipcalc, hwinfo, antiword, grml-etc, grml-rebuildfstab, grml-files, grml-hwinfo, pptp-linux, flite, wmii, mutt, slrn, grml-docs, grml-autoconfig, dirvish, sudo, idesk, xlockmore, python-dbus, notification-daemon, grml-quickconfig, libwebservice-google-suggest-perl, lzop
+Suggests: ruby, python, grml-x, ipcalc, hwinfo, antiword, grml-etc, grml-rebuildfstab, grml-files, grml-hwinfo, pptp-linux, flite, wmii, mutt, slrn, grml-docs, grml-autoconfig, dirvish, sudo, idesk, xlockmore, python-dbus, notification-daemon, grml-quickconfig, lzop
 Breaks: grml-autoconfig (<< 0.9.19)
 Description: Scripts for the Grml system for an easier life
  Some scripts which should make life easier.
