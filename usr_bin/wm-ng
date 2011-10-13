@@ -6,7 +6,7 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
-# start Grml's fluxbox setup only if fluxbo is present
+# start Grml's fluxbox setup only if fluxbox is present
 if [ -x "$(which fluxbox 2>/dev/null)" ] ; then
   gkrellm -g -1+26 &
   (sleep 2; idesk &) &
