@@ -78,7 +78,6 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-resolution.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-runtty.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-slrn.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-start.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/iimage.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/lodgeit.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/logview.1.gz \
