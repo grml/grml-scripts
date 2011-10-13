@@ -5,7 +5,7 @@
 	#a2x -f manpage $^ 2>&1 |grep -v '^Note: ' >&2
 	#gzip -f --best $(patsubst %.txt,%, $^)
 	asciidoc -d manpage -b docbook $^
-	xsltproc /usr/share/xml/docbook/stylesheet/nwalsh/manpages/docbook.xsl  $(patsubst %.txt,%.xml, $^)
+	xsltproc --novalid --nonet /usr/share/xml/docbook/stylesheet/nwalsh/manpages/docbook.xsl  $(patsubst %.txt,%.xml, $^)
 	# try to get rid of ".sp" sequences, see http://bts.grml.org/grml/issue567
 	sed -i 's/\.sp//' $(patsubst %.txt,%, $^)
 	gzip -f --best $(patsubst %.txt,%, $^)

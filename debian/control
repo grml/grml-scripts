@@ -13,16 +13,15 @@ Bugs: mailto:bugs@grml.org
 
 Package: grml-scripts
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, less, dialog, perl, zsh, dash, links | w3m | links2, screen, grml-network, grml-etc-core, libterm-readkey-perl, lockfile-progs, grml-scripts-core
-Suggests: ruby, python, grml-x, ipcalc, hwinfo, antiword, grml-etc, grml-rebuildfstab, grml-files, grml-hwinfo, flite, wmii, mutt, slrn, grml-docs, grml-autoconfig, dirvish, sudo, idesk, python-dbus, notification-daemon, grml-quickconfig, lzop, alsa-utils
+Depends: ${shlibs:Depends}, ${misc:Depends}, less, dialog, perl, zsh, dash, links | w3m | links2, screen, grml-network, grml-etc-core, lockfile-progs, grml-scripts-core
+Suggests: python, grml-x, ipcalc, hwinfo, grml-etc, grml-rebuildfstab, grml-files, mutt, slrn, grml-docs, grml-autoconfig, dirvish, sudo, idesk, python-dbus, notification-daemon, grml-quickconfig, lzop, alsa-utils
 Breaks: grml-autoconfig (<< 0.9.19)
 Description: Scripts for the Grml system for an easier life
  Some scripts which should make life easier.
  .
  This package contains a lot of scripts and is only really suited for
  full Grml systems. It provides, amongst others: grml-mutt, grml-slrn,
- iimage, make_chroot_jail.sh, sepdate.pl, sepdate.rb, sepdate.sh*,
- wwwis.
+ iimage, make_chroot_jail.
  If you're on a plain Debian system, it's recommended to install
  grml-scripts-core instead.
  .

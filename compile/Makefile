@@ -1,4 +1,4 @@
-PROGS = pong vmware-detect align dpkg_not_running reread_partition_table grml-runtty
+PROGS = vmware-detect dpkg_not_running reread_partition_table grml-runtty
 
 #ifndef CFLAGS
 CFLAGS = -O2 -Wall -s
@@ -14,16 +14,11 @@ CC = gcc
 
 all: $(PROGS)
 
-pong: pong.c
-
 vmware-detect: vmware-detect.c
 	diet $(CC) $(CFLAGS) -o $@ $^
 
 dpkg_not_running: dpkg_not_running.c
 	diet $(CC) $(CFLAGS) -o $@ $^
-
-align: align.c
-	$(CC) -Wall -o align align.c
 
 reread_partition_table: reread_partition_table.c
 	diet $(CC) $(CFLAGS) -o $@ $^

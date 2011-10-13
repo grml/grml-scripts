@@ -15,34 +15,11 @@ grml\-scripts \- script collection for the Grml distribution
 .SS align
 find out a platform's endianness, alignment rules, and type
 sizes. Moderately useful for porting stuff.
-.SS attach-screen
-attach to a running screen-session
-.SS bincompare.pl
-binary file similarity checking (using entropy)
 .SS caps-ctrl
 Switch keyboard settings of key known as "Caps-Lock" between
 using Caps-Lock either as control- or shift-key. Notice:
 running caps-ctrl on console requires root-permissions,
 running it in X window system works as normal user.
-.SS cicqhist
-create a human-readable version of centericq history
-.SS code2html
-convert code to html
-.SS dir2html
-create HTML-listing for a directory
-.SS exifinfo
-print EXIF information of an image file
-.SS fex
-extract archives via smart frontend
-.SS find-hidden-word-text
-find hidden text in MS Word documents
-.SS find-text
-search for text pattern in text file only
-.SS findwaste
-find good directories for archiving based on the average age
-of files (access time) in the directory and the directory size
-.SS firevim
-open a file from firefox with vim
 .SS grepc
 grep for pattern and cut it
 .SS grml-bind
@@ -68,12 +45,8 @@ switch keyboard layout
 configuration script for newsreader slrn
 .SS grml-start
 start browser with information page on Grml
-.SS hgrep.sh
-highlight grep output
 .SS iimage
 create statical webgallery
-.SS irclog2html-2.1.pl
-create html output of irc log files
 .SS lodgeit
 Paste command line client. Pastes files or stdin to http://paste.pocoo.org.
 .SS logview
@@ -88,53 +61,22 @@ return IP address of running system on stdout (requires network access)
 Symlink to notifyd.py
 .SS notifyd.py
 Listen for incoming messages on a specific port and print them via specific handlers (per default via libnotify).
-.SS say
-wrapper for festival to use the text to speech system
-.SS search
-perl script by Jeffrey Friedl - a combo of find and grep
-.SS sepdate.pl sepdate.rb sepdate.sh
-"endless september"
 .SS soundtest
-Test sound on your Grml system via playing a ogg-file.
-Provide the files you want to play as arguments,
-adjust player which should be used for playing the files
-via environment variable PLAYER. Calling the script without
-any arguments will play the default file via ogg123.
-.SS sysdump
-dump /sys to a textformat
-.SS twebgal
-create a tiny webgallery using CSS-features
-.SS unbleach.pl
-replace all the unsighted unprintable characters
-bleached out of your source, useful for really
-dirty perl programs
-.SS urlgrep.awk
-print http|ftp|rstp|mms:// text entries in text.
-.SS usbtree
-Reads /proc/bus/usb/devices and selectively lists and/or interprets it.
-.SS wwwis
-read in an HTML file and insert 'HEIGHT=### WIDTH=###' directives into the inlined images used in the file
+Legacy wrapper for speaker-test.
 .SS XF86AudioLowerVolume
 Lower audio volume.
 .SS XF86AudioMute
 Mute and - if run again - restore audio settings.
 .SS XF86AudioRaiseVolume
 Raise audio volume.
-.SS xsay
-output X clipboard text via flite (soundsystem)
 
 .SH "ADMIN SCRIPTS"
 
 .SS blacklist
 Blacklist module via module-init-tools (/etc/modprobe.d/grml).
-.SS bt-hid
-Connect human input device via bluetooth to local system.
 .SS dpkg_not_running
 Check whether Debian's package management (dpkg) is running.
 Returns 0 if it is not running and 1 if it is already running.
-.SS dpkg-rebuild
-rebuild your Debian dpkg/apt status file if it got
-corrupted by a system crash.
 .SS grml-config
 Central configuration interface to configure the Grml system.
 .SS grml-config-root
@@ -145,14 +87,6 @@ files. When executed without a parameter a dialog based
 frontend will be used, when given a parameter the provided
 parameter will be used as hostname and script is executed in
 non-interactive mode.
-.SS grml-tpm
-Set up a system for use with TPM technology.
-.SS grml-vpnc-tugraz
-Connect to TU Graz network via vpnc.
-.SS mkdosswapfile
-Create GRML swapfile on an existing DOS partition.
-.SS ndiswrapper.sh
-NdisWrapper configuration script.
 .SS noeject
 Wrapper script to avoid ejecting and prompting for CD removal when
 rebooting/halting system. Use it via 'noeject <cmd>', e.g. 'noeject reboot'
@@ -161,17 +95,6 @@ to reboot system without ejecting CD and without prompting.
 Wrapper script to avoid prompting for CD removal when rebooting/halting
 system. Use it via 'noprompt <cmd>', e.g. 'noprompt reboot' to reboot system
 without prompting.
-.SS pong
-Ping a class-C subnet in parallel without using a broadcast
-address. Useful for seeing which IPs are in use.
-.SS prepare_ramdisk.sh
-Set up a ramdisk.
-.SS prepare_tmpfs.sh
-Set up a tmpfs.
-.SS PrintAnalyzer
-Generate some stats from cups page_log file.
-.SS suspenduser.sh
-Suspend a user account for the indefinite future.
 .SS unblacklist
 Remove blacklisted module from /etc/modprobe.d/grml.
 

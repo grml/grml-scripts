@@ -35,12 +35,6 @@ case "$CMDLINE" in
           $script
        fi
        ;;
-   # turn on speakers for accessibility users:
-   *\ swspeak*|*blind*|*brltty*|*speakup*)
-      if [ $(which flite) ] ; then
-         flite -o play -t "Finished booting"
-      fi
-      ;;
 
    # do nothing if booting with bootoption noquick:
    *\ noquick*)

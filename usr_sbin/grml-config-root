@@ -27,7 +27,6 @@ MENU=$($DIALOG --stdout --clear --title "$PN" --menu \
 "grml-setkeyboard" "Configure system wide keyboard settings" \
 "grml-network" "Configure network settings/setup" \
 "grml-terminalserver" "Configure and start terminalserver for booting via network" \
-"suspenduser" "Suspend a user account for indefinite time" \
 "exit" "Exit this program")
 
 retval=$?
@@ -48,9 +47,6 @@ case $retval in
         fi
         if [ "$MENU" = "grml-terminalserver" ]; then
           exec grml-terminalserver
-        fi
-        if [ "$MENU" = "suspenduser" ]; then
-          exec suspenduser_gui.sh
         fi
         if [ "$MENU" = "exit" ]; then
           exit
