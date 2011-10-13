@@ -26,7 +26,6 @@ MENU=$($DIALOG --stdout --clear --title "$PN" --menu \
 "grml-setlang" "Configure system wide language settings" \
 "grml-setkeyboard" "Configure system wide keyboard settings" \
 "grml-network" "Configure network settings/setup" \
-"grml-postfix" "Configure some basic settings of the postfix MTA" \
 "grml-terminalserver" "Configure and start terminalserver for booting via network" \
 "suspenduser" "Suspend a user account for indefinite time" \
 "exit" "Exit this program")
@@ -46,9 +45,6 @@ case $retval in
         fi
         if [ "$MENU" = "grml-network" ]; then
           exec grml-network
-        fi
-        if [ "$MENU" = "grml-postfix" ]; then
-          exec grml-postfix
         fi
         if [ "$MENU" = "grml-terminalserver" ]; then
           exec grml-terminalserver

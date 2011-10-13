@@ -99,7 +99,6 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-init.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-lock.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-mutt.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-postfix.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-soundtest.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-lang.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-resolution.1.gz \
