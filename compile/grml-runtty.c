@@ -88,10 +88,10 @@ int main(int argc, char* argv[]) {
   prog = argv[2];
   user = argv[3];
 
-  openlog("startprog", LOG_CONS | LOG_PID, LOG_AUTHPRIV);
+  openlog("grml-runtty", LOG_CONS | LOG_PID, LOG_AUTHPRIV);
 
   if (tty == NULL || prog == NULL || user == NULL)
-    error("Usage: startprog /dev/ttyX /bin/bash user", 1);
+    error("Usage: grml-runtty /dev/ttyX /bin/bash user", 1);
 
   pw = getpwnam(user);
   if (!pw)
@@ -99,6 +99,11 @@ int main(int argc, char* argv[]) {
 
   clearenv();
   putenv("TERM=linux");
+  if (pw->pw_uid == 0) {
+    putenv("PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin");
+  } else {
+    putenv("PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games");
+  }
   setenvvar("TTY", tty);
   setenvvar("USER", pw->pw_name);
   setenvvar("LOGNAME", pw->pw_name);
