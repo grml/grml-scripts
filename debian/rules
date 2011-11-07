@@ -92,10 +92,7 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/soundtest.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/unblacklist.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/vmware-detect.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/wm-ng.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/XF86AudioLowerVolume.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/XF86AudioMute.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/XF86AudioRaiseVolume.1.gz
+		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/wm-ng.1.gz
 	dh_strip
 	dh_compress
 	mkdir -p $(CURDIR)/debian/grml-scripts/usr/share/lintian/overrides/
