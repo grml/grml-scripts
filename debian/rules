@@ -54,7 +54,6 @@ binary-arch: build install
 	dh_testroot
 	dh_installchangelogs
 	dh_installdocs
-	dh_installwm --priority=20 /usr/bin/wm-ng
 	dh_installman $(wildcard doc/*.gz)
 	dh_installman $(wildcard manpages/*.1) $(wildcard manpages/*.8)
 	dh_link /usr/bin/soundtest /usr/bin/grml-soundtest
@@ -91,8 +90,7 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/pong.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/soundtest.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/unblacklist.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/vmware-detect.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/wm-ng.1.gz
+		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/vmware-detect.1.gz
 	dh_strip
 	dh_compress
 	mkdir -p $(CURDIR)/debian/grml-scripts/usr/share/lintian/overrides/
