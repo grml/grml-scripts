@@ -9,7 +9,7 @@
 . /etc/grml/sh-lib
 
 [ -r /etc/grml_version ] && GRMLVERSION=$(cat /etc/grml_version) || GRMLVERSION='(no version information available)'
-PATH=$HOME/bin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/games:/home/grml/bin
+PATH=$HOME/bin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/games:/home/grml/bin
 CMDLINE=$(cat /proc/cmdline)
 [ -n "$distri" ] || distri="grml"
 
