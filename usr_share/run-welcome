@@ -27,6 +27,15 @@ if [ -r /etc/default/locale ] ; then
    fi
 fi
 
+# welcome beep
+case "$CMDLINE" in
+  *\ nobeep*)
+    ;;
+  *)
+    (for f in 2000 1500 1000 2000; do beep -f $f -l 150; done) &
+    ;;
+esac
+
 case "$CMDLINE" in
    # allow customized startup via bootoption startup:
    *startup=*)
