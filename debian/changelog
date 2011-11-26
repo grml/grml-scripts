@@ -1,3 +1,17 @@
+grml-scripts (2.0.2) unstable; urgency=low
+
+  [ Christian Hofstaedtler ]
+  * [01e3faf] grml-chroot: write /etc/debian_chroot [Closes: issue953]
+  * [2f61167] Remove wm-ng
+  * [f11fb88] Remove X11R6 from run-welcome PATH
+  * [df294f8] Add welcome beep (disable with nobeep)
+
+  [ Michael Prokop ]
+  * [65eedce] drop XF86Audio{LowerVolume,Mute,RaiseVolume} scripts
+    [Closes: issue626]
+
+ -- Michael Prokop <mika@grml.org>  Sat, 26 Nov 2011 18:10:11 +0100
+
 grml-scripts (2.0.1) unstable; urgency=low
 
   * [03d7a14] grml-runtty MUST set PATH
