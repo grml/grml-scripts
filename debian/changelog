@@ -1,3 +1,9 @@
+grml-scripts (2.0.3) unstable; urgency=low
+
+  * [146ab33] run-welcome: use different beep sequence
+
+ -- Michael Prokop <mika@grml.org>  Thu, 08 Dec 2011 14:36:59 +0100
+
 grml-scripts (2.0.2) unstable; urgency=low
 
   [ Christian Hofstaedtler ]
