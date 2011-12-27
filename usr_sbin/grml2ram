@@ -19,7 +19,34 @@ if ! isgrmlcd ; then
    exit 1
 fi
 
-IMAGE=$(ls /live/image/live/*.squashfs 2>/dev/null | head -1)
+if [ -z "$CMDLINE" ]; then
+  # if CMDLINE was set from the outside, we're debugging.
+  # otherwise, take CMDLINE from Kernel and config files.
+  CMDLINE="$(cat /proc/cmdline)"
+  [ -d /cdrom/bootparams/ ]      && CMDLINE="$CMDLINE $(cat /cdrom/bootparams/* | tr '\n' ' ')"
+  [ -d /live/image/bootparams/ ] && CMDLINE="$CMDLINE $(cat /live/image/bootparams/* | tr '\n' ' ')"
+fi
+
+getbootparam(){
+  local line
+  local ws
+  ws='	 '
+  line=" $CMDLINE "
+  case "$line" in
+    *[${ws}]"$1="*)
+      result="${line##*[$ws]$1=}"
+      result="${result%%[$ws]*}"
+      echo "$result"
+      return 0 ;;
+    *) # no match?
+      return 1 ;;
+  esac
+}
+
+MEDIA_PATH="$(getbootparam live-media-path)"
+MEDIA_PATH="${MEDIA_PATH:-.}"
+
+IMAGE=$(find /live/image/${MEDIA_PATH}/ -name *.squashfs 2>/dev/null | head -1)
 if ! [ -r "$IMAGE" ] ; then
    if [ -r /cdrom/GRML/GRML ] ; then
       IMAGE='/cdrom/GRML/GRML'
@@ -49,7 +76,7 @@ rsync -a --progress $IMAGE /tmp/GRML
 LANGUAGE=C LANG=C LC_ALL=C perl << EOF
 open LOOP, '</dev/loop0' or die $!;
 open DEST, '</tmp/GRML' or die $!;
-ioctl(LOOP, 0x4C06, fileno(DEST)) or die $!
+ioctl(LOOP, 0x4C06, fileno(DEST)) or die $!;
 close LOOP;
 close DEST;
 EOF
