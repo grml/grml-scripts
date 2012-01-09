@@ -1,3 +1,11 @@
+grml-scripts (2.0.4) unstable; urgency=low
+
+  [ Ulrich Dangel ]
+  * [4c7a73c] grml2ram: try to determine live-media-path and
+    fallback to first squashfs file.
+
+ -- Michael Prokop <mika@grml.org>  Mon, 09 Jan 2012 16:32:34 +0100
+
 grml-scripts (2.0.3) unstable; urgency=low
 
   * [146ab33] run-welcome: use different beep sequence
