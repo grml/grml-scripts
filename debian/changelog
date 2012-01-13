@@ -1,3 +1,10 @@
+grml-scripts (2.0.5) unstable; urgency=low
+
+  * [3ea7b75] grml-hostname: improve regex for hostname matching
+    [Closes: issue1005]
+
+ -- Michael Prokop <mika@grml.org>  Fri, 13 Jan 2012 01:01:36 +0100
+
 grml-scripts (2.0.4) unstable; urgency=low
 
   [ Ulrich Dangel ]
