@@ -1,3 +1,11 @@
+grml-scripts (2.0.6) unstable; urgency=low
+
+  * [0c2ca6d] grml2ram manpage: update space requirements. Thanks to
+    Thomas Arendsen Hein
+  * [bf1d0a4] Bump Standards-Version to 3.9.3.
+
+ -- Michael Prokop <mika@grml.org>  Wed, 09 May 2012 12:32:35 +0200
+
 grml-scripts (2.0.5) unstable; urgency=low
 
   * [3ea7b75] grml-hostname: improve regex for hostname matching
