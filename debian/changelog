@@ -1,3 +1,14 @@
+grml-scripts (2.0.7) unstable; urgency=low
+
+  * [59a7eca] run-welcome: drop references to deprecated wiki page,
+    replace mail address with http://grml.org/bugs/
+    Thanks to Christoph Biedl for the bugreport
+  * [93921e3] make_chroot_jail: redirect error messages to stderr
+  * [62aa56f] make_chroot_jail: support sudo configuration via
+    /etc/sudoers.d
+
+ -- Michael Prokop <mika@grml.org>  Mon, 28 May 2012 12:51:25 +0200
+
 grml-scripts (2.0.6) unstable; urgency=low
 
   * [0c2ca6d] grml2ram manpage: update space requirements. Thanks to
