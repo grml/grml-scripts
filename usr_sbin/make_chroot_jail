@@ -278,10 +278,17 @@ echo
 # skip the creation of the new account
 if [ "$1" != "update" ]; then
 
-# Modifiy /etc/sudoers to enable chroot-ing for users
+# Modify sudo config to enable chroot-ing for users,
 # must be removed by hand if account is deleted
-echo "Modifying /etc/sudoers"
-echo "$CHROOT_USERNAME       ALL=NOPASSWD: `which chroot`, /bin/su - $CHROOT_USERNAME" >> /etc/sudoers
+SUDOERS="$CHROOT_USERNAME       ALL=NOPASSWD: $(which chroot), /bin/su - $CHROOT_USERNAME"
+if [ -d /etc/sudoers.d ]; then
+  echo "Installing sudoers configuration file /etc/sudoers.d/jail-$CHROOT_USERNAME"
+  echo "$SUDOERS" > "/etc/sudoers.d/jail-$CHROOT_USERNAME"
+  chmod 0440 "/etc/sudoers.d/jail-$CHROOT_USERNAME"
+else
+  echo "Modifying /etc/sudoers"
+  echo "$SUDOERS" >> /etc/sudoers
+fi
 
 # Define HomeDir for simple referencing
 HOMEDIR="$JAILPATH/home/$CHROOT_USERNAME"
