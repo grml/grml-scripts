@@ -67,8 +67,7 @@ else # ... or finally fall back to grml's default
      echo
      echo 'NOTICE: This is a release candidate version!'
      echo 'Please notice that this is not yet a stable release.'
-     echo 'See http://wiki.grml.org/doku.php?id=release_candidate for known issues.'
-     echo 'Please report any bugs you notice: bugs@grml.org'
+     echo 'Please report any bugs you notice: http://grml.org/bugs/'
      echo
   fi
 
@@ -78,7 +77,7 @@ else # ... or finally fall back to grml's default
      echo 'NOTICE: This is a daily snapshot version!'
      echo 'Please notice that this is not yet a stable release.'
      echo 'See http://daily.grml.org/ for more details.'
-     echo 'Please report any bugs you notice: daily@grml.org'
+     echo 'Please report any bugs you notice: http://grml.org/bugs/'
      echo
   fi
 
