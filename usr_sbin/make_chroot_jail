@@ -60,7 +60,7 @@ echo "Am I root?  "
 if [ "$(whoami 2>/dev/null)" != "root" ] && [ "$(id -un 2>/dev/null)" != "root" ] ; then
   echo "  NO!
 
-Error: You must be root to run this script."
+Error: You must be root to run this script." >&2
   exit 1
 fi
 echo "  OK";
@@ -107,7 +107,7 @@ if ( test -f /usr/bin/which ) || ( test -f /bin/which ) || ( test -f /sbin/which
   else echo "  failed
 
 Please install which-binary!
-"
+" >&2
 exit 1
 fi
 
@@ -118,7 +118,7 @@ if [ `which chroot` ];
 
 chroot not found!
 Please install chroot-package/binary!
-"
+" >&2
 exit 1
 fi
 
@@ -130,7 +130,7 @@ else
 
 sudo not found!
 Please install sudo-package/binary!
-"
+" >&2
 exit 1
 fi
 
@@ -142,7 +142,7 @@ else
 
 dirname not found!
 Please install dirname-binary (to be found eg in the package coreutils)!
-"
+" >&2
 exit 1
 fi
 
@@ -155,7 +155,7 @@ else
 
 awk not found!
 Please install (g)awk-package/binary!
-"
+" >&2
 exit 1
 fi
 
@@ -210,7 +210,7 @@ Say only yes if you absolutely know what you are doing!
   read MODIFYUSER
   if [ "$MODIFYUSER" != "yes" ]; then
     echo "
-Not entered yes. Exiting...."
+Not entered yes. Exiting...." >&2
     exit 1
   fi
 }
@@ -232,7 +232,7 @@ time when adding more than one account to the jail)
 read OVERWRITE
 if [ "$OVERWRITE" != "yes" ]; then
   echo "
-Not entered yes. Exiting...."
+Not entered yes. Exiting...." >&2
   exit 1
 fi
 else
@@ -302,7 +302,7 @@ useradd -m -d "$HOMEDIR" -s "$SHELL" $CHROOT_USERNAME && chmod 700 "$HOMEDIR"
 
 # Enter password for new account
 if !(passwd $CHROOT_USERNAME);
-  then echo "Passwords are probably not the same, try again."
+  then echo "Passwords are probably not the same, try again." >&2
   exit 1;
 fi
 echo
