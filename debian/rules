@@ -71,12 +71,10 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-info.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-init.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-lock.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-mutt.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-soundtest.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-lang.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-resolution.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-runtty.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-slrn.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/iimage.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/lodgeit.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/logview.1.gz \

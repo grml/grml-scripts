@@ -13,15 +13,15 @@ Bugs: mailto:bugs@grml.org
 Package: grml-scripts
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, perl, zsh, dash, links | w3m | links2, screen, grml-etc-core
-Suggests: python, grml-rebuildfstab, grml-network, grml-files, mutt, slrn, grml-docs, dirvish, sudo, idesk, python-dbus, notification-daemon, grml-quickconfig, lzop, alsa-utils
+Suggests: python, grml-rebuildfstab, grml-network, grml-files, grml-docs, dirvish, sudo, idesk, python-dbus, notification-daemon, grml-quickconfig, lzop, alsa-utils
 Description: Collection of little tools
- This package contains a lot of scripts and is only really suited for
- full Grml systems. It provides, amongst others: grml-mutt, grml-slrn,
- iimage, make_chroot_jail, qma, myip and lodgeit.
+ This package contains a lot of scripts and is only really suited
+ for full Grml systems. It provides, amongst others: iimage,
+ make_chroot_jail, qma, myip and lodgeit.
  .
- Notice: not all the packages which are required for all the scripts
- are in the "Depends:" line. If you want to get a full featured
- grml-scripts package install the packages from the "Suggests:" line
- too or just use the full Grml system.
+ Notice: not all the packages which are required for all the
+ scripts are in the "Depends:" line. If you want to get a full
+ featured grml-scripts package install the packages from the
+ "Suggests:" line too or just use the full Grml system.
  .
  For more details take a look at the grml-scripts manpage.
