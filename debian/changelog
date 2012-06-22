@@ -1,3 +1,12 @@
+grml-scripts (2.1.0) unstable; urgency=low
+
+  * [149eeaf] Drop grml-mutt, grml-slrn + accordingly grml-config-user
+  * [45b48f9] Drop deprecated package grml-docs from Suggest
+  * [9375a86] grml-hostname: restart avahi-daemon service if present and
+    running. Thanks to Ulrich Dangel for the bugreport
+
+ -- Michael Prokop <mika@grml.org>  Fri, 22 Jun 2012 22:43:24 +0200
+
 grml-scripts (2.0.7) unstable; urgency=low
 
   * [59a7eca] run-welcome: drop references to deprecated wiki page,
