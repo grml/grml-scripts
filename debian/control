@@ -17,7 +17,7 @@ Suggests: python, grml-rebuildfstab, grml-network, grml-files, dirvish, sudo, id
 Description: Collection of little tools
  This package contains a lot of scripts and is only really suited
  for full Grml systems. It provides, amongst others: iimage,
- make_chroot_jail, qma, myip and lodgeit.
+ make_chroot_jail, qma and myip.
  .
  Notice: not all the packages which are required for all the
  scripts are in the "Depends:" line. If you want to get a full
