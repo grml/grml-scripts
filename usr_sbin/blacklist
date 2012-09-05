@@ -10,7 +10,7 @@ PN="$(basename $0)"
 [ -n "$MODPROBEFILE" ] || MODPROBEFILE=/etc/modprobe.d/grml.conf
 [ -r /etc/grml/lsb-functions ] && . /etc/grml/lsb-functions
 
-if [ -z "$1" ] ; then
+if [ -z "$1" ] || [ "$1" = "-h" ] || [ "$1" = "--help" ] ; then
   echo "Usage: $PN <module>"
   echo "$PN (un)blacklists module via $MODPROBEFILE"
   exit 1
