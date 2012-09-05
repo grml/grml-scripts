@@ -25,12 +25,17 @@ fi
 
 if [ "$PN" = 'blacklist' ] ; then
   if grep -q "^blacklist $1\$" $MODPROBEFILE ; then
-     eerror "Module $1 already on blacklist in $MODPROBEFILE" ; eend 1
+    eerror "Module $1 already on blacklist in $MODPROBEFILE" ; eend 1
   else
     einfo "Adding module $1 to blacklist $MODPROBEFILE"
+
+    if ! modinfo "${1}" >/dev/null 2>&1 ; then
+      ewarn "Notice: module $1 does not seem to exist. Adding anyway."
+      eend 0
+    fi
+
     echo "blacklist $1" >> $MODPROBEFILE
     echo "alias $1 off" >> $MODPROBEFILE ; eend $?
-    modprobe -l | grep -q "${1}.ko" || ( ewarn "Notice: module $1 does not seem to exist. Adding anyway." ; eend 0 )
   fi
 fi
 
