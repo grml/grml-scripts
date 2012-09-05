@@ -17,8 +17,8 @@ if [ -z "$1" ] || [ "$1" = "-h" ] || [ "$1" = "--help" ] ; then
 fi
 
 if [ "$(id -ru)" != "0" ] ; then
-   echo Error: become root before starting $0 >& 2
-   exit 100
+  echo Error: become root before starting $0 >& 2
+  exit 100
 fi
 
 [ -f "$MODPROBEFILE" ] || touch "$MODPROBEFILE"
