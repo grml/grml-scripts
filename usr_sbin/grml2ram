@@ -19,12 +19,18 @@ if ! isgrmlcd ; then
    exit 1
 fi
 
+# old linuxrc version:
+[ -d /cdrom ]      && export LIVECD_PATH=/cdrom
+# initramfs layout until around December 2012:
+[ -d /live/image ] && export LIVECD_PATH=/live/image
+# initramfs layout since around December 2012:
+[ -d /lib/live/mount/medium ] && export LIVECD_PATH=/lib/live/mount/medium
+
 if [ -z "$CMDLINE" ]; then
   # if CMDLINE was set from the outside, we're debugging.
   # otherwise, take CMDLINE from Kernel and config files.
   CMDLINE="$(cat /proc/cmdline)"
-  [ -d /cdrom/bootparams/ ]      && CMDLINE="$CMDLINE $(cat /cdrom/bootparams/* | tr '\n' ' ')"
-  [ -d /live/image/bootparams/ ] && CMDLINE="$CMDLINE $(cat /live/image/bootparams/* | tr '\n' ' ')"
+  [ -d ${LIVECD_PATH}/bootparams/ ] && CMDLINE="$CMDLINE $(cat ${LIVECD_PATH}/bootparams/* | tr '\n' ' ')"
 fi
 
 getbootparam(){
@@ -46,7 +52,7 @@ getbootparam(){
 MEDIA_PATH="$(getbootparam live-media-path)"
 MEDIA_PATH="${MEDIA_PATH:-.}"
 
-IMAGE=$(find /live/image/${MEDIA_PATH}/ -name *.squashfs 2>/dev/null | head -1)
+IMAGE=$(find $LIVECD_PATH/${MEDIA_PATH}/ -name *.squashfs 2>/dev/null | head -1)
 if ! [ -r "$IMAGE" ] ; then
    if [ -r /cdrom/GRML/GRML ] ; then
       IMAGE='/cdrom/GRML/GRML'
@@ -82,14 +88,17 @@ close DEST;
 EOF
 
 # identify cd-rom:
-GRMLDEV=$(awk '{if ($2 ~ /^\/live\/image$/ ) print $1}' /etc/mtab)
+GRMLDEV=$(awk '{if ($2 ~ /^\/lib\/live\/mount\/medium$/ ) print $1}' /etc/mtab)
+if [ -z "$GRMLDEV" ]; then
+  GRMLDEV=$(awk '{if ($2 ~ /^\/live\/image$/ ) print $1}' /etc/mtab)
+fi
 if [ -z "$GRMLDEV" ]; then
    GRMLDEV=$(awk '{if ($2 ~ /^\/cdrom$/ ) print $1}' /etc/mtab)
-fi     
+fi
 [ -n "$GRMLDEV" ] || GRMLDEV='/dev/cdrom'
 
 einfo "Unmounting cdrom"
-[ -d /live/image ] && umount /live/image || umount /cdrom
+[ -d $LIVECD_PATH ] && umount $LIVECD_PATH || umount /cdrom
 eend $?
 einfo "Now you can eject your grml-cd (e.g. run 'eject $GRMLDEV')." ; eend 0
 
