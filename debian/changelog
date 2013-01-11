@@ -1,3 +1,11 @@
+grml-scripts (2.3.0) unstable; urgency=low
+
+  * [ce116dc] grml2ram: adjust live image handling for new live-boot
+    directory. Thanks to Pawel Sadkowski <azhag@dug.net.pl> for reporting
+    and testing
+
+ -- Michael Prokop <mika@grml.org>  Fri, 11 Jan 2013 13:45:05 +0100
+
 grml-scripts (2.2.2) unstable; urgency=low
 
   * [f68a348] grml-scripts manpage: no longer mention deprecated align
