@@ -52,7 +52,7 @@ getbootparam(){
 MEDIA_PATH="$(getbootparam live-media-path)"
 MEDIA_PATH="${MEDIA_PATH:-.}"
 
-IMAGE=$(find $LIVECD_PATH/${MEDIA_PATH}/ -name *.squashfs 2>/dev/null | head -1)
+IMAGE=$(find ${LIVECD_PATH}/${MEDIA_PATH}/ -name *.squashfs 2>/dev/null | head -1)
 if ! [ -r "$IMAGE" ] ; then
    if [ -r /cdrom/GRML/GRML ] ; then
       IMAGE='/cdrom/GRML/GRML'
