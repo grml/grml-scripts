@@ -11,7 +11,7 @@ PN="$(basename $0)"
 
 usage(){
     echo "Usage: $0 <language>"
-    echo "supported values: at, ch, de, dvorak, es, jp, us"
+    echo "supported values: at, ch, de, dvorak, es, jp, us, fr"
 }
 
 setvalue(){
@@ -75,6 +75,10 @@ if [ -z "$DISPLAY" ] ;then
     echo 'Loading keymap es...'
     sudo loadkeys i386/qwerty/es.kmap.gz
     echo -e "\nDone."
+  elif [ "$1" = "fr" ] ; then
+    echo 'Loading keymap fr...'
+    sudo loadkeys i386/azerty/fr.kmap.gz
+    echo -e "\nDone."
   else echo "No valid parameter given.
 
 Notice: Use loadkeys on console and setxkbmap when running X for
@@ -113,6 +117,10 @@ else
     elif [ "$1" = "es" ] ; then
       echo "Loading keymap es..."
       setxkbmap es
+      echo -e "\nDone."
+    elif [ "$1" = "fr" ] ; then
+      echo "Loading keymap fr..."
+      setxkbmap fr
       echo -e "\nDone."
     else
       echo "No valid parameter given."
