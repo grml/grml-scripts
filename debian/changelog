@@ -1,3 +1,13 @@
+grml-scripts (2.4.0) unstable; urgency=low
+
+  [ Ziirish ]
+  * [2281d0c] add: french keymap support to grml-lang
+
+  [ Michael Prokop ]
+  * [5b0c6b2] grml-lang: sort languages alphabetically
+
+ -- Michael Prokop <mika@grml.org>  Wed, 04 Sep 2013 17:14:26 +0200
+
 grml-scripts (2.3.1) unstable; urgency=low
 
   * [27adf51] grml2ram: fix usage of LIVECD_PATH variable together with
