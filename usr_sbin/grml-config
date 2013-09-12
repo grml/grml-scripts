@@ -27,7 +27,6 @@ http://www.grml.org/ - contact (at) grml.org
 
 " 13 65 3 \
 "root" "Admin scripts (needs root permissions)" \
-"user" "User scripts" \
 "exit" "Exit this program")
 
 retval=$?
@@ -36,9 +35,6 @@ case $retval in
   0)
         if [ "$MENU" = "root" ]; then
           exec grml-config-root
-        fi
-        if [ "$MENU" = "user" ]; then
-          exec grml-config-user
         fi
         if [ "$MENU" = "exit" ]; then
           exit
