@@ -1,3 +1,13 @@
+grml-scripts (2.4.1) unstable; urgency=low
+
+  [ Markus Rekkenbeil ]
+  * [2706049] Fix: Erase all forgotten stuff from grml-config-user
+    [Closes: issue1272]
+  * [1c3aa8a] Remove the script grml-config and set a symlink to grml-
+    config-root
+
+ -- Michael Prokop <mika@grml.org>  Fri, 13 Sep 2013 10:22:21 +0200
+
 grml-scripts (2.4.0) unstable; urgency=low
 
   [ Ziirish ]
