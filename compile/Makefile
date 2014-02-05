@@ -24,7 +24,7 @@ reread_partition_table: reread_partition_table.c
 	diet $(CC) $(CFLAGS) -o $@ $^
 
 grml-runtty: grml-runtty.c
-	$(CC) $(CFLAGS) -o $@ $^
+	diet $(CC) $(CFLAGS) -o $@ $^ -lcompat
 
 clean:
 	rm -f $(PROGS)
