@@ -1,3 +1,11 @@
+grml-scripts (2.5.0) unstable; urgency=medium
+
+  * [2fea94b] Statically compile grml-runtty to avoid dependency on
+    unstable's libc
+  * [6e082c1] Bump Standards-Version to 3.9.5
+
+ -- Michael Prokop <mika@grml.org>  Wed, 05 Feb 2014 09:36:17 +0100
+
 grml-scripts (2.4.1) unstable; urgency=low
 
   [ Markus Rekkenbeil ]
