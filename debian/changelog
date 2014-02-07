@@ -1,3 +1,9 @@
+grml-scripts (2.5.1) unstable; urgency=medium
+
+  * [5cf13e0] grml-lock: fix typo (s/to/do/)
+
+ -- Michael Prokop <mika@grml.org>  Fri, 07 Feb 2014 08:56:13 +0100
+
 grml-scripts (2.5.0) unstable; urgency=medium
 
   * [2fea94b] Statically compile grml-runtty to avoid dependency on
