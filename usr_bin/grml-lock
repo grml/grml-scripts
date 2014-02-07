@@ -71,7 +71,7 @@ set_passwd() {
   if [ "$PASSWD1" = "$PASSWD2" ] ; then
     echo "$USER:$PASSWD2" | sudo chpasswd
   else
-    $DIALOG --title "$PN" --msgbox "Error: passwords to not match. Exiting." 0 0
+    $DIALOG --title "$PN" --msgbox "Error: passwords do not match. Exiting." 0 0
     exit 1
   fi
 }
