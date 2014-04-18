@@ -11,7 +11,7 @@ PN="$(basename $0)"
 
 usage(){
     echo "Usage: $0 <language>"
-    echo "supported values: at, ch, de, dvorak, es, fr, jp, us"
+    echo "supported values: at, ch, de, dvorak, es, fr, it, jp, us"
 }
 
 setvalue(){
@@ -59,6 +59,10 @@ if [ -z "$DISPLAY" ] ;then
     echo "Loading keymap for Switzerland..."
     sudo loadkeys i386/qwertz/sg-latin1.kmap.gz
     echo -e "\nDone."
+  elif [ "$1" = "it" ] ; then
+    echo "Loading keymap for Italy..."
+    sudo loadkeys i386/qwerty/it.kmap.gz
+    echo -e "\nDone."
   elif [ "$1" = "us" ] ; then
     echo 'Loading keymap us...'
     sudo loadkeys i386/qwerty/us-latin1.kmap.gz
@@ -101,6 +105,10 @@ else
     elif [ "$1" = "ch" ] ; then
       echo "Loading keymap for Switzerland..."
       setxkbmap ch
+      echo -e "\nDone."
+    elif [ "$1" = "it" ] ; then
+      echo "Loading keymap for Italy..."
+      setxkbmap it
       echo -e "\nDone."
     elif [ "$1" = "jp" ] ; then
       echo "Loading keymap for Japan..."
