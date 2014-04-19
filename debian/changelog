@@ -1,3 +1,10 @@
+grml-scripts (2.5.2) unstable; urgency=medium
+
+  * [3209d31] grml-lang: support language settings for Italy. Thanks to
+    Marco d'Itri <md@Linux.IT>
+
+ -- Michael Prokop <mika@grml.org>  Sat, 19 Apr 2014 15:40:56 +0200
+
 grml-scripts (2.5.1) unstable; urgency=medium
 
   * [5cf13e0] grml-lock: fix typo (s/to/do/)
