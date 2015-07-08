@@ -2,7 +2,11 @@ Source: grml-scripts
 Section: utils
 Priority: optional
 Maintainer: Michael Prokop <mika@grml.org>
-Build-Depends: debhelper (>= 8), dietlibc-dev, xsltproc, docbook-xsl, asciidoc
+Build-Depends: asciidoc,
+               debhelper (>= 8),
+               dietlibc-dev,
+               docbook-xsl,
+               xsltproc
 Standards-Version: 3.9.6
 Homepage: http://git.grml.org/?p=grml-scripts.git
 Vcs-git: git://git.grml.org/grml-scripts.git
@@ -12,9 +16,28 @@ Bugs: mailto:bugs@grml.org
 
 Package: grml-scripts
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, perl, zsh, dash, links | w3m | links2, screen, grml-etc-core
+Depends: dash,
+         dialog,
+         grml-etc-core,
+         links | w3m | links2,
+         perl,
+         screen,
+         zsh,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Recommends: physlock
-Suggests: python, grml-rebuildfstab, grml-network, grml-files, dirvish, sudo, idesk, python-dbus, notification-daemon, grml-quickconfig, lzop, alsa-utils
+Suggests: alsa-utils,
+          dirvish,
+          grml-files,
+          grml-network,
+          grml-quickconfig,
+          grml-rebuildfstab,
+          idesk,
+          lzop,
+          notification-daemon,
+          python,
+          python-dbus,
+          sudo
 Description: Collection of little tools
  This package contains a lot of scripts and is only really suited
  for full Grml systems. It provides, amongst others: iimage,
