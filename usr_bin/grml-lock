@@ -14,7 +14,7 @@ if [ "$1" = "-h" ] || [ "$1" = "--help" ] ; then
   echo "${PN}: wrapper script to lock desktop
 
 This script is a wrapper to lock your desktop session
-through the vlock application.
+through the physlock application.
 
 Usage: just execute $PN without any further options."
   exit 0
@@ -22,7 +22,7 @@ fi
 
 if [ -r /etc/grml/script-functions ] ; then
    . /etc/grml/script-functions
-   check4progs vlock sudo chpasswd dialog || { echo "Sorry, necessary tools missing - can not continue. Exiting.">&2 ; exit 1 ; }
+   check4progs physlock sudo chpasswd dialog || { echo "Sorry, necessary tools missing - can not continue. Exiting.">&2 ; exit 1 ; }
 fi
 
 PWD_TEXT1="Set password (hidden typing):"
@@ -44,7 +44,7 @@ and therefore might not work as intended." 7 70
 fi
 
 lock_desktop() {
-  vlock -a -n -s
+  sudo physlock -u "$USER"
 }
 
 is_passwd_set() {

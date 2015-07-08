@@ -13,6 +13,7 @@ Bugs: mailto:bugs@grml.org
 Package: grml-scripts
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, perl, zsh, dash, links | w3m | links2, screen, grml-etc-core
+Recommends: physlock
 Suggests: python, grml-rebuildfstab, grml-network, grml-files, dirvish, sudo, idesk, python-dbus, notification-daemon, grml-quickconfig, lzop, alsa-utils
 Description: Collection of little tools
  This package contains a lot of scripts and is only really suited
