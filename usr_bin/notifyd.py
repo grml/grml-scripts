@@ -47,6 +47,7 @@ import string
 import socket
 import logging
 import getopt
+import subprocess
 
 default_hostname = 'localhost'
 default_port = 1234
@@ -58,7 +59,8 @@ default_logfile = None
 
 def play(sound_file):
     def play_wrapper(msg):
-        os.system('/usr/bin/aplay "%s" 2> /dev/null &' % sound_file)
+        with open(os.devnull, 'w') as devnull:
+            subprocess.Popen(['/usr/bin/aplay', sound_file], stderr=devnull)
     return play_wrapper
 
 def execute(command):
