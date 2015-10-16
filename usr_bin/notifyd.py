@@ -20,7 +20,7 @@
 
 
 """
-example of ~/.notifid.conf:
+example of ~/.notifyd.conf:
 ---------------------------
 
 import os
