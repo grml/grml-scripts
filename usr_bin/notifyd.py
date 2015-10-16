@@ -65,7 +65,7 @@ def play(sound_file):
 
 def execute(command):
     def command_wrapper(msg):
-        os.system(command % dict(msg = msg))
+        subprocess.call(command % dict(msg = msg))
     return command_wrapper
 
 def osd(msg):
