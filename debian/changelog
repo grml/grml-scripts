@@ -1,3 +1,10 @@
+grml-scripts (2.6.1) unstable; urgency=medium
+
+  * [cc0570b] Add script run-journalctl + use /bin/sh for all run-*
+    wrappers
+
+ -- Michael Prokop <mika@grml.org>  Wed, 06 Jan 2016 12:34:43 +0100
+
 grml-scripts (2.6.0) unstable; urgency=medium
 
   * [efc6685] grml-lock: switch from vlock to physlock [Closes: issue1342]
