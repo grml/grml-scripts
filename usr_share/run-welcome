@@ -1,6 +1,6 @@
 #!/bin/bash
 # Filename:      run-welcome
-# Purpose:       customized zsh login welcome screen for use at grml
+# Purpose:       customized zsh login welcome screen for use at Grml
 # Authors:       grml-team (grml.org), (c) Michael Prokop <mika@grml.org>
 # Bug-Reports:   see http://grml.org/bugs/
 # License:       This file is licensed under the GPL v2.
