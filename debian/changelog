@@ -1,3 +1,10 @@
+grml-scripts (2.7.1) unstable; urgency=medium
+
+  * [f29c425] grml-chroot: mount /dev/pts as devpts inside chroot. Thanks
+    to András Korn for proposing the --rbind/--recursive approach
+
+ -- Michael Prokop <mika@grml.org>  Tue, 16 May 2017 15:12:15 +0200
+
 grml-scripts (2.7.0) unstable; urgency=medium
 
   * [8dccac9] grml-hostname: no longer rely on /etc/init.d/hostname.sh
