@@ -1,3 +1,12 @@
+grml-scripts (2.7.2) unstable; urgency=medium
+
+  [ Evgeni Golov ]
+  * [ac55b37] notifyd: call aplay using subprocess.Popen + replace
+    os.system with subprocess.call
+  * [6aedfb4] notifyd: fix typo in comment
+
+ -- Michael Prokop <mika@grml.org>  Wed, 24 May 2017 09:17:12 +0200
+
 grml-scripts (2.7.1) unstable; urgency=medium
 
   * [f29c425] grml-chroot: mount /dev/pts as devpts inside chroot. Thanks
