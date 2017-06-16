@@ -1,3 +1,10 @@
+grml-scripts (2.7.3) unstable; urgency=medium
+
+  * [3559bd7] grml-chroot: mount /dev/pts as devpts inside chroot
+    (Replacing the previous approach of git commit 0bbd68b)
+
+ -- Michael Prokop <mika@grml.org>  Fri, 16 Jun 2017 10:04:42 +0200
+
 grml-scripts (2.7.2) unstable; urgency=medium
 
   [ Evgeni Golov ]
