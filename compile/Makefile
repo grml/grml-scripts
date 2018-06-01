@@ -1,4 +1,4 @@
-PROGS = vmware-detect dpkg_not_running reread_partition_table grml-runtty
+PROGS = vmware-detect dpkg_not_running grml-runtty
 
 #ifndef CFLAGS
 CFLAGS = -O2 -Wall -s
@@ -18,9 +18,6 @@ vmware-detect: vmware-detect.c
 	diet $(CC) $(CFLAGS) -o $@ $^
 
 dpkg_not_running: dpkg_not_running.c
-	diet $(CC) $(CFLAGS) -o $@ $^
-
-reread_partition_table: reread_partition_table.c
 	diet $(CC) $(CFLAGS) -o $@ $^
 
 grml-runtty: grml-runtty.c

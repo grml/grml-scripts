@@ -41,7 +41,6 @@ install: build
 	cp -a usr_share/*       debian/grml-scripts/usr/share/grml-scripts/
 	install -m 755 compile/vmware-detect          debian/grml-scripts/usr/bin/vmware-detect
 	install -m 755 compile/dpkg_not_running       debian/grml-scripts/usr/sbin/dpkg_not_running
-	install -m 755 compile/reread_partition_table debian/grml-scripts/usr/sbin/reread_partition_table
 	install -m 755 compile/grml-runtty            debian/grml-scripts/sbin/grml-runtty
 
 # Build architecture-independent files here.

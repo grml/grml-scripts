@@ -1,5 +1,4 @@
 align
 dpkg_not_running
-reread_partition_table
 vmware-detect
 grml-runtty
