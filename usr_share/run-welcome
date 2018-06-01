@@ -13,20 +13,6 @@ PATH=$HOME/bin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr
 CMDLINE=$(cat /proc/cmdline)
 [ -n "$distri" ] || distri="grml"
 
-# Activate unicode console if running within utf8 environment
-# Dirty hack to fix unicode issue on amd64...
-# unicode_start during bootprocess just does not work reliable :(
-NUM_CONSOLES=12
-if [ -r /etc/default/locale ] ; then
-   if grep -q "LANG=.*UTF" /etc/default/locale ; then
-       for vc in `seq 1 ${NUM_CONSOLES}` ; do
-           echo -n -e '\033%G' > /dev/tty${vc}
-       done
-       kbd_mode -u
-       dumpkeys | loadkeys --unicode > /dev/null
-   fi
-fi
-
 # welcome beep
 case "$CMDLINE" in
   *\ nobeep*)
