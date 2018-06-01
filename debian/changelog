@@ -1,3 +1,13 @@
+grml-scripts (2.8.0) unstable; urgency=medium
+
+  * [1f62255] run_welcome: drop unicode hack
+  * [3f01a0b] Bump Standards-Version to 4.1.4
+  * [5be17a0] Bump debian/compat to 10 and adjust Build-Depends for
+    debhelper to v10
+  * [c07e10f] Drop reread_partition_table binary
+
+ -- Michael Prokop <mika@grml.org>  Fri, 01 Jun 2018 17:00:43 +0200
+
 grml-scripts (2.7.3) unstable; urgency=medium
 
   * [3559bd7] grml-chroot: mount /dev/pts as devpts inside chroot
