@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Michael Prokop <mika@grml.org>
 Build-Depends: asciidoc,
-               debhelper (>= 8),
+               debhelper (>= 10~),
                dietlibc-dev,
                docbook-xsl,
                xsltproc
