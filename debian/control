@@ -7,7 +7,7 @@ Build-Depends: asciidoc,
                dietlibc-dev,
                docbook-xsl,
                xsltproc
-Standards-Version: 3.9.8
+Standards-Version: 4.1.4
 Homepage: http://git.grml.org/?p=grml-scripts.git
 Vcs-git: git://git.grml.org/grml-scripts.git
 Vcs-Browser: http://git.grml.org/?p=grml-scripts.git
