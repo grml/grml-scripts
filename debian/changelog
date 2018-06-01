@@ -1,3 +1,9 @@
+grml-scripts (2.7.4) unstable; urgency=medium
+
+  * [1f62255] run_welcome: drop unicode hack
+
+ -- Michael Prokop <mika@grml.org>  Fri, 01 Jun 2018 16:55:41 +0200
+
 grml-scripts (2.7.3) unstable; urgency=medium
 
   * [3559bd7] grml-chroot: mount /dev/pts as devpts inside chroot
