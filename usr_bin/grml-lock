@@ -44,7 +44,12 @@ and therefore might not work as intended." 7 70
 fi
 
 lock_desktop() {
-  sudo physlock -u "$USER"
+  # be backwards compatible, see https://github.com/grml/grml/issues/87
+  if physlock --help 2>&1 | grep -q -- '-u user' ; then
+    sudo physlock -u "$USER"
+  else
+    sudo physlock
+  fi
 }
 
 is_passwd_set() {
