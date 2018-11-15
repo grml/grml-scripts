@@ -1,3 +1,13 @@
+grml-scripts (2.8.1) unstable; urgency=medium
+
+  * [9248c3d] grml-lock: run physlock with `-u` option only if it's
+    supported. Thanks to maximebuy for the bugreport
+  * [69aa5c2] Bump Standards-Version to 4.2.1
+  * [984c07a] Switch Homepage + Vcs-Browser headers from http to https
+  * [b409311] Drop deprecated directories /etc/grml + /etc/postfix
+
+ -- Michael Prokop <mika@grml.org>  Thu, 15 Nov 2018 10:09:23 +0100
+
 grml-scripts (2.8.0) unstable; urgency=medium
 
   * [1f62255] run_welcome: drop unicode hack
