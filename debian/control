@@ -8,9 +8,9 @@ Build-Depends: asciidoc,
                docbook-xsl,
                xsltproc
 Standards-Version: 4.2.1
-Homepage: http://git.grml.org/?p=grml-scripts.git
+Homepage: https://git.grml.org/?p=grml-scripts.git
 Vcs-git: git://git.grml.org/grml-scripts.git
-Vcs-Browser: http://git.grml.org/?p=grml-scripts.git
+Vcs-Browser: https://git.grml.org/?p=grml-scripts.git
 Origin: Grml
 Bugs: mailto:bugs@grml.org
 
