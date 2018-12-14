@@ -1,3 +1,10 @@
+grml-scripts (2.8.2) unstable; urgency=medium
+
+  * [a753f24] grml-chroot: iff /proc/cmdline exists don't try to mount
+    again
+
+ -- Michael Prokop <mika@grml.org>  Fri, 14 Dec 2018 11:38:12 +0100
+
 grml-scripts (2.8.1) unstable; urgency=medium
 
   * [9248c3d] grml-lock: run physlock with `-u` option only if it's
