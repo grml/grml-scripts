@@ -1,3 +1,10 @@
+grml-scripts (2.8.3) unstable; urgency=medium
+
+  * [090cabd] grml-lang: use /etc/default/keyboard instead of
+    /etc/sysconfig/keyboard
+
+ -- Michael Prokop <mika@grml.org>  Sun, 30 Dec 2018 12:17:16 +0100
+
 grml-scripts (2.8.2) unstable; urgency=medium
 
   * [a753f24] grml-chroot: iff /proc/cmdline exists don't try to mount
