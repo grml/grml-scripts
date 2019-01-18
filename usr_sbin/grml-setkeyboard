@@ -53,7 +53,7 @@ LANGUAGE=$(LANG=C $DIALOG --stdout --title "$PN" --default-item $DEFAULT_KEYBOAR
 "Which keyboard layout do you want to use?
 
 Please notice that this will not really affect your currently running system.
-If you want to change keyboard settings temporarly please use grml-lang instead.
+If you want to change keyboard settings temporarily please use grml-lang instead.
 
 Configuration will be written to /etc/sysconfig/keyboard" 0 0 0 \
  at  austrian off \
