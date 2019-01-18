@@ -2015,7 +2015,7 @@ if [ "$DISABLED" != "" ] ; then
    exit
 fi
 
-# check for programms ################################################
+# check for programs ################################################
 
 init_iimage
 

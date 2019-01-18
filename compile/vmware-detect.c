@@ -129,7 +129,7 @@ int main(int argc, char* argv[]) {
         return EXIT_SUCCESS;
     } else {
         if(!Killed) {
-            // check unuseable or not implemented
+            // check unusable or not implemented
             DWRITE("false\n");
             DWRITE("Check not implemented, yet!\n");
             return a ? EXIT_SUCCESS : EXIT_FAILURE;

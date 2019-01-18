@@ -5,7 +5,7 @@
 # Bug-Reports:   see http://grml.org/bugs/
 # License:       This file is licensed under the GPL v2.
 ################################################################################
-# Ressources:
+# Resources:
 #   http://apt-get.dk/howto/backup/
 #   http://edseek.com/~jasonb/articles/dirvish_backup/advanced.html
 #   http://www.dirvish.org/svn/contrib/admin/DailyEmailScript/dirvish-status.sh
@@ -175,7 +175,7 @@ case "$1" in
      ;;
 esac
 
-# now run the funtions:
+# now run the functions:
 get_backup_dir     && \
 client_name        && \
 tree_name          && \

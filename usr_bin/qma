@@ -90,9 +90,9 @@ vimconfig='
         "the expectation of getting the next search via 'n' can not be ignored"
          nn -n <ESC> :set invnumber<cr>
          nn h :set invhlsearch<cr>
-        "Make toggling case-sensitive accessable via the letter i"
+        "Make toggling case-sensitive accessible via the letter i"
          nn i :set invignorecase<cr>
-        "Make toggling case-sensitive accessable via the less convention via -i"
+        "Make toggling case-sensitive accessible via the less convention via -i"
          nn -i :set invignorecase<cr>
          nn <space> <C-f>
          nn <backspace> <C-b>

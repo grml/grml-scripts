@@ -32,7 +32,7 @@ for i in $(xrandr | awk {'print $2$3$4'} | grep "^[0-9]") ; do
   ((COUNTER++))
 done
 
-# Menue Tool
+# Menu Tool
 dialog --title "$PN" --menu "Change X resolution via xrandr (current resolution: $CURRENT_RESOLUTION):" 0 0 0 $STRING 2>$RESOLUTION
 retval=$?
 case $retval in
