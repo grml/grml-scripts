@@ -1,3 +1,13 @@
+grml-scripts (2.8.4) unstable; urgency=medium
+
+  * [74367b9] grml-chroot: bind-mount /run/udev in target system as
+    workaround for lvm2 issue #918590
+  * [39eaa05] Bump Standards-Version to 4.3.0
+  * [c96bb74] grml-setkeyboard + grml-setkeyboard{,.8}: fix typos
+  * [12b3ac5] Fix some further typos
+
+ -- Michael Prokop <mika@grml.org>  Fri, 18 Jan 2019 14:21:33 +0100
+
 grml-scripts (2.8.3) unstable; urgency=medium
 
   * [090cabd] grml-lang: use /etc/default/keyboard instead of
