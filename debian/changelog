@@ -1,3 +1,10 @@
+grml-scripts (2.9.0) unstable; urgency=medium
+
+  * [34819b8] grml2ram: switch default mount point from
+    /lib/live/mount/medium to /run/live/medium
+
+ -- Michael Prokop <mika@grml.org>  Thu, 21 Mar 2019 12:25:51 +0100
+
 grml-scripts (2.8.4) unstable; urgency=medium
 
   * [74367b9] grml-chroot: bind-mount /run/udev in target system as
