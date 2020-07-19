@@ -1,3 +1,11 @@
+grml-scripts (2.9.1) unstable; urgency=medium
+
+  * [749ee8e] grml-info: drop support for deprecated gdialog and prefer
+    zenity over Xdialog
+  * [09e5d68] grml-lock: drop gdialog usage and don't wrap text in zenity
+
+ -- Michael Prokop <mika@grml.org>  Sun, 19 Jul 2020 18:09:17 +0200
+
 grml-scripts (2.9.0) unstable; urgency=medium
 
   * [34819b8] grml2ram: switch default mount point from
