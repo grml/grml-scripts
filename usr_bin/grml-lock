@@ -6,7 +6,7 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
-PN="$(basename $0)"
+PN="$(basename "$0")"
 
 [ -n "$USER" ] || USER=grml
 
@@ -32,15 +32,22 @@ PWD_TEXT2="Retype new password:"
 DIALOG='dialog'
 PWD_CMD="dialog --stdout --title $PN --passwordbox"
 
-# only if using X and gdialog + zenity are available use graphical frontend
-if [ -n "$DISPLAY" ] && [ -x "$(which gdialog)" ] && [ -x "$(which zenity)" ] ; then
-  DIALOG='gdialog'
+GUI=false
+# only when using X and zenity is available use graphical frontend
+if [ -n "${DISPLAY}" ] && [ -x "$(command -v zenity)" ] ; then
+  DIALOG='zenity'
   PWD_CMD="zenity --title $PN --entry --hide-text"
+  GUI=true
 fi
 
 if ! [ -r /etc/grml_version ] ; then
-  $DIALOG --title "$PN" --msgbox "Warning: this system does not look like a Grml (based) system
-and therefore might not work as intended." 7 70
+  if [ "${GUI}" = true ] ; then
+    $DIALOG --no-wrap --title "$PN" --warning --text "Warning: this system does not look like a Grml (based) system,\n
+    and therefore might not work as intended."
+  else
+    $DIALOG --title "$PN" --msgbox "Warning: this system does not look like a Grml (based) system
+    and therefore might not work as intended." 7 70
+  fi
 fi
 
 lock_desktop() {
@@ -61,7 +68,7 @@ is_passwd_set() {
 }
 
 set_passwd() {
-  if [ "$DIALOG" = "gdialog" ] ; then
+  if [ "${GUI}" = true ] ; then
     PASSWD1="$($PWD_CMD --text="$PWD_TEXT1")"
     PASSWD2="$($PWD_CMD --text="$PWD_TEXT2")"
   else
@@ -70,20 +77,29 @@ set_passwd() {
   fi
 
   if [ -z "$PASSWD1" ] ; then
-    $DIALOG --title "$PN" --msgbox "Error retrieving password. Exiting." 0 0
+    if [ -n "${GUI}" ] ; then
+      $DIALOG --title "$PN" --error --text "Error retrieving password. Exiting."
+    else
+      $DIALOG --title "$PN" --msgbox "Error retrieving password. Exiting." 0 0
+    fi
     exit 1
   fi
+
   if [ "$PASSWD1" = "$PASSWD2" ] ; then
     echo "$USER:$PASSWD2" | sudo chpasswd
   else
-    $DIALOG --title "$PN" --msgbox "Error: passwords do not match. Exiting." 0 0
+    if [ "${GUI}" = true ] ; then
+      $DIALOG --no-wrap --title "$PN" --error --text "Error: passwords do not match.\nExiting."
+    else
+      $DIALOG --title "$PN" --msgbox "Error: passwords do not match. Exiting." 0 0
+    fi
     exit 1
   fi
 }
 
 askpwd() {
-  if [ "$DIALOG" = "gdialog" ] ; then
-    zenity --title="$PN" --question --cancel-label='Exit' --ok-label='Set password' --text="User $USER has no password set yet. Without a password you will not be able to log in again. Set password for user $USER?"
+  if [ "${GUI}" = true ] ; then
+    $DIALOG --no-wrap --title="$PN" --question --cancel-label='Exit' --ok-label='Set password' --text="User $USER has no password set yet.\nWithout a password you will not be able to log in again.\nSet password for user $USER?"
     RC=$?
   else
     $DIALOG --title "$PN" --no-label Exit --yes-label Continue --yesno "User $USER has no password set yet. Without a password you will not be able to log in again. Set password for user $USER?" 0 0
@@ -100,8 +116,11 @@ askpwd() {
 if ! isgrmlcd ; then
   lock_desktop
 else
-  is_passwd_set || askpwd
-  [ "$?" = "0" ] && lock_desktop || exit 1
+  if is_passwd_set || askpwd ; then
+    lock_desktop
+  else
+    exit 1
+  fi
 fi
 
 ## END OF FILE #################################################################
