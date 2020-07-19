@@ -29,14 +29,11 @@ if [ -n "$DISPLAY" ] ; then
      firefox $PAGE
    elif check4progs x-www-browser &>/dev/null ; then
      x-www-browser $PAGE
+   elif check4progs zenity &>/dev/null ; then
+     zenity --no-wrap --error --text="Sorry, no usable X browser (dillo, xlinks2, firefox,...) found."
+     exit 1
    elif check4progs Xdialog &>/dev/null ; then
      Xdialog --msgbox "Sorry, no usable X browser (dillo, xlinks2, firefox,...) found." 0 0
-     exit 1
-   elif check4progs gdialog &>/dev/null ; then
-     gdialog --msgbox "Sorry, no usable X browser (dillo, xlinks2, firefox,...) found." 0 0
-     exit 1
-   elif check4progs zenity &>/dev/null ; then
-     zenity --info --text="Sorry, no usable X browser (dillo, xlinks2, firefox,...) found."
      exit 1
    fi
 else # no X:
