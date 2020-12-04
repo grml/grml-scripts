@@ -8,7 +8,7 @@ all: codecheck spellcheck ## Run codecheck and spellcheck
 codecheck: shellcheck pythoncheck ## Run shellcheck and pythoncheck
 
 shellcheck: ## Run shellcheck
-	for shellfile in usr_bin/* usr_sbin/* usr_share/*; do head -1 "$${shellfile}" | grep -q "/bin/bash\|/bin/sh" && shellcheck -x "$${shellfile}"; done
+	for shellfile in $$(ls usr_bin/* usr_sbin/* usr_share/* | grep -v "iimage"); do head -1 "$${shellfile}" | grep -q "/bin/bash\|/bin/sh" && shellcheck -e SC1117 -x "$${shellfile}"; done
 
 .ONESHELL:
 pythoncheck: ## Run shellcheck
