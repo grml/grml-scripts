@@ -5,13 +5,13 @@
 # Bug-Reports:   see http://grml.org/bugs/
 # License:       This file is licensed under the GPL v2.
 ################################################################################
-num=$(wc -l $0)
-num=${num%% $0}
-num=$(( $num - 16 ))
-randline=$(($(date +%Y%M%S) * $$ % $num))
-hostname=$(tail -n $randline "$0" | head -1 | grep -v "'" | grep -v '^#' | grep -v '^$')
+hostname_start=$(grep -n "^# EOF" "$0")
+hostname_start=${hostname_start%%:#*}
+hostname_start=$(( hostname_start + 3 ))
+hostname=$(tail -n +$hostname_start "$0" | grep -v "'" | grep -v '^#' | grep -v '^$' | sort -R | tail -1)
 [ -n "$hostname" ] && echo "$hostname" || echo "grml"
-# EOF - line 15; now the hostnames:
+# EOF - now the hostnames:
+# shellcheck disable=SC2034
 hostnames='
 23
 42
