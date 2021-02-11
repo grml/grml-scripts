@@ -6,8 +6,9 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
-PN="$(basename $0)"
+PN="$(basename "$0")"
 [ -n "$MODPROBEFILE" ] || MODPROBEFILE=/etc/modprobe.d/grml.conf
+# shellcheck disable=SC1091
 [ -r /etc/grml/lsb-functions ] && . /etc/grml/lsb-functions
 
 if [ -z "$1" ] || [ "$1" = "-h" ] || [ "$1" = "--help" ] ; then
@@ -17,7 +18,7 @@ if [ -z "$1" ] || [ "$1" = "-h" ] || [ "$1" = "--help" ] ; then
 fi
 
 if [ "$(id -ru)" != "0" ] ; then
-  echo Error: become root before starting $0 >& 2
+  echo "Error: become root before starting $0" >& 2
   exit 100
 fi
 
