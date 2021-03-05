@@ -6,13 +6,16 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
-PN="$(basename $0)"
+PN="$(basename "$0")"
 TMP=$(mktemp)
 DIALOG=dialog
 CONFFILE='/etc/runlevel.conf'
 
+# shellcheck disable=SC1091
+{
 . /etc/grml/script-functions
 . /etc/grml/lsb-functions
+}
 
 check4root || exit 100
 
@@ -26,7 +29,7 @@ trap bailout HUP INT QUIT TERM
 is_value_set(){
  [ -n "$1" ] || return 2
  [ -r "$TMP" ] || return 3
- grep -q "$1" $TMP && return 0 || return 1
+ grep -q "$1" "$TMP" && return 0 || return 1
 }
 
 INFO="Which services would you like to have enabled on your system?
@@ -43,7 +46,7 @@ or choose cancel.
 [ -r /etc/init.d/lvm2 ]   && LVM='lvm!logical volume management!on'
 [ -r /etc/init.d/mdadm ]  && SRAID='mdadm!software-raid via mdadm!on'
 [ -r /etc/init.d/dmraid ] && MRAID='dmraid!software-raid via dmraid!off'
-[ -r /etc/init.d/dbus -o -r /etc/init.d/dbus-1 ] && DBUS='dbus!hal/dbus (important for KDE e.g.)!off'
+[ -r /etc/init.d/dbus ] || [ -r /etc/init.d/dbus-1 ] && DBUS='dbus!hal/dbus (important for KDE e.g.)!off'
 [ -r /etc/init.d/hal ]    && HAL='hal!Hardware Abstraction Layer daemon (important for KDE e.g.)!off'
 [ -r /etc/init.d/nfs-common ] && NFS='nfs!Network File System (client setup)!off'
 
@@ -123,7 +126,7 @@ set_values(){
 # the interface itself
 oifs="$IFS"
 IFS='!'
-$DIALOG --title "$PN" --checklist "$INFO" 30 65 8 $LVM $SRAID $MRAID $DBUS $HAL $NFS 2>$TMP
+$DIALOG --title "$PN" --checklist "$INFO" 30 65 8 "$LVM" "$SRAID" "$MRAID" "$DBUS" "$HAL" "$NFS" 2>"$TMP"
 
 retval="$?"
 case $retval in
@@ -144,7 +147,7 @@ case $retval in
           ;;
 esac
 
-rm -f $TMP
+rm -f "$TMP"
 IFS="$oifs"
 
 ## END OF FILE #################################################################
