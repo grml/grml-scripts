@@ -6,7 +6,9 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
+# shellcheck disable=SC1091
 . /etc/grml/script-functions
+# shellcheck disable=SC1091
 . /etc/grml/lsb-functions
 check4progs iptstate || exit 1
 
@@ -18,8 +20,9 @@ else
    ewarn "Module ip_conntrack is not present. Can not start iptstate therefore."
    eindent
      einfon "Do you want to load it and invoke iptstate afterwards? [YES|no] "
-     read a
-     if [ "$a" = YES -o "$a" = yes -o "$a" = '' -o "$a" = y -o "$a" = Y ] ; then
+     read -r a
+     a=$(echo "$a" | tr '[:upper:]' '[:lower:]')
+     if [ "$a" = "yes" ] || [ "$a" = "y" ] || [ "$a" = "" ] ; then
         modprobe ip_conntrack ; RC=$?
 	eend $RC
 	[ "$RC" = 0 ] && exec iptstate
