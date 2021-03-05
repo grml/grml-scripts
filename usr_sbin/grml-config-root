@@ -9,8 +9,8 @@
 PATH=${PATH:-'/bin/:/sbin/:/usr/bin:/usr/sbin'}
 
 # set up some variables
-DIALOG=`which dialog`
-PN=$(basename $0)
+DIALOG=$(command -v dialog)
+PN=$(basename "$0")
 
 if [ "$(id -ru)" != "0" ] ; then
         $DIALOG --msgbox "Error: $0 requires root permissions. Exiting." 0 0
