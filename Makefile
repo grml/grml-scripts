@@ -3,22 +3,66 @@
 help:  ## Display this help
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m\033[0m\n\nTargets:\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
 
-all: codecheck spellcheck ## Run codecheck and spellcheck
+allcheck: codecheck spellcheck ## Run codecheck and spellcheck
 
 codecheck: shellcheck pythoncheck ## Run shellcheck and pythoncheck
 
+.ONESHELL:
 shellcheck: ## Run shellcheck
-	for shellfile in $$(ls usr_bin/* usr_sbin/* usr_share/* | grep -v "iimage" | grep -v "make_chroot_jail"); do head -1 "$${shellfile}" | grep -q "/bin/bash\|/bin/sh" && shellcheck -e SC1117 -x "$${shellfile}"; done
+	@RETURN=0
+	@for shellfile in $$(ls usr_bin/* usr_sbin/* usr_share/*); do
+	@	[ "$${shellfile}" = "usr_bin/iimage" ] && continue
+	@	[ "$${shellfile}" = "usr_sbin/make_chroot_jail" ] && continue
+	@	file "$${shellfile}" | grep -q shell && (shellcheck -x "$${shellfile}" || RETURN=1)
+	@done
+	@exit $${RETURN}
 
 .ONESHELL:
-pythoncheck: ## Run shellcheck
-	for pythonfile in usr_bin/* usr_sbin/* usr_share/*; do
-		if head -1 "$${pythonfile}" | grep -q "python"; then
-			flake8 "$${pythonfile}"
-			isort --check "$${pythonfile}"
-			black --check "$${pythonfile}"
-		fi
-	done
+pythoncheck: ## Run pythoncheck (flakecheck, isortcheck + blackcheck)
+	@RETURN=0
+	@for pythonfile in usr_bin/* usr_sbin/* usr_share/*; do
+	@	if head -1 "$${pythonfile}" | grep -q "python"; then
+	@		flake8 "$${pythonfile}" || RETURN=1
+	@		isort --check "$${pythonfile}" || RETURN=1
+	@		black --check "$${pythonfile}" || RETURN=1
+	@	fi
+	@done
+	@exit $${RETURN}
 
+.ONESHELL:
+flakecheck: ## Run flake8 only
+	@RETURN=0
+	@for pythonfile in usr_bin/* usr_sbin/* usr_share/*; do
+	@	if head -1 "$${pythonfile}" | grep -q "python"; then
+	@		flake8 "$${pythonfile}" || RETURN=1
+	@	fi
+	@done
+	@exit $${RETURN}
+
+.ONESHELL:
+isortcheck: ## Run isort --check only
+	@RETURN=0
+	@for pythonfile in usr_bin/* usr_sbin/* usr_share/*; do
+	@	if head -1 "$${pythonfile}" | grep -q "python"; then
+	@		isort --check "$${pythonfile}" || RETURN=1
+	@	fi
+	@done
+	@exit $${RETURN}
+
+.ONESHELL:
+blackcheck: ## Run black --check only
+	@RETURN=0
+	@for pythonfile in usr_bin/* usr_sbin/* usr_share/*; do
+	@	if head -1 "$${pythonfile}" | grep -q "python"; then
+	@		black --check "$${pythonfile}" || RETURN=1
+	@	fi
+	@done
+	@exit $${RETURN}
+
+.ONESHELL:
 spellcheck: ## Run spellcheck
-	spellintian manpages/*
+	@OUTPUT="$$(spellintian manpages/*)"
+	@echo $$OUTPUT
+	@if [ -n "$$OUTPUT" ]; then
+	@	false
+	@fi

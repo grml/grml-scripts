@@ -53,4 +53,4 @@ jobs:
       run: black --version
 
     - name: Codecheck execution
-      run: make codecheck
+      run: make --keep-going codecheck
