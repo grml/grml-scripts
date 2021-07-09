@@ -1,3 +1,9 @@
+grml-scripts (2.10.0) unstable; urgency=medium
+
+  * [7bbfe54] grml-chroot: support efivarfs in EFI environments
+
+ -- Michael Prokop <mika@grml.org>  Fri, 09 Jul 2021 09:15:50 +0200
+
 grml-scripts (2.9.1) unstable; urgency=medium
 
   * [749ee8e] grml-info: drop support for deprecated gdialog and prefer
