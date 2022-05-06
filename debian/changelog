@@ -1,3 +1,16 @@
+grml-scripts (2.11.0) unstable; urgency=medium
+
+  [ Darshaka Pathirana ]
+  * [cb8ed97] Add Code testing workflow
+  * [e41ddb1] Makefile: Do not shellcheck iimage
+  * [584376f] Makefile: Do not shellcheck make_chroot_jail
+  * [02a237b] Makefile: return error if a check fails
+  * [95f1a38] grml-swapon.8: Fix spelling (via spellintian)
+  * [a4b7aa6] grepedit/notifyd.py: Convert to Python 3
+  * Many shellcheck related changes
+
+ -- Michael Prokop <mika@grml.org>  Fri, 06 May 2022 14:06:47 +0200
+
 grml-scripts (2.10.0) unstable; urgency=medium
 
   * [7bbfe54] grml-chroot: support efivarfs in EFI environments
