@@ -6,9 +6,8 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
-PN="$(basename $0)"
+PN="$(basename "$0")"
 DIALOG=dialog
-CMDLINE=/proc/cmdline
 LANGFUNC=/etc/grml/language-functions
 
 # notice: Debian's locales.postinst has been modified to write
@@ -17,8 +16,11 @@ LANGFUNC=/etc/grml/language-functions
 # so modifying it was a policy violation.
 CONFFILE=/etc/default/locale
 
+# shellcheck disable=SC1091
+{
 . /etc/grml/script-functions
 . /etc/grml/lsb-functions
+}
 
 check4root || exit 100
 
@@ -43,6 +45,7 @@ setvalue(){
      sed -i "s#^${1}.*#${1}${2}#"  $CONFFILE
   # is the new Debian style /etc/default/locale present?
   elif grep -q "^# ${1}$" "$CONFFILE" ; then
+     # shellcheck disable=SC1117
      sed -i "s#^\# ${1}#${1}${2}#" $CONFFILE
   else
      echo "$1${2}" >> $CONFFILE
@@ -61,8 +64,11 @@ You have to make sure the appropriate packages are installed." 0 0
    fi
 fi
 
+# shellcheck disable=SC1091
+{
 [ -r /etc/environment ]    && . /etc/environment
 [ -r /etc/default/locale ] && . /etc/default/locale
+}
 [ -n "$LANGUAGE" ] && DEFAULT_LANGUAGE="$LANGUAGE"
 
 if [ -z "$DEFAULT_LANGUAGE" ] ; then
@@ -70,6 +76,8 @@ if [ -z "$DEFAULT_LANGUAGE" ] ; then
 fi
 
 if [ -z "$NONINTERACTIVE" ] ; then
+# shellcheck disable=SC1010
+{
    LANGUAGE=$(LANG=C $DIALOG --stdout --title "$PN" --default-item $DEFAULT_LANGUAGE --radiolist \
 "Which language do you want to use?
 
@@ -148,6 +156,7 @@ Configuration will be written to $CONFFILE" 0 0 0 \
  us 'american (unicode version)' off \
  us-iso 'american (iso version)' off \
 )
+}
 
   retval=$?
   case $retval in
@@ -168,12 +177,13 @@ fi
 # fallback to C if using an ISO system (which is latin1 for LC_CTYPE);
 # this should prevent users from broken ctype settings if the set
 # locale isn't available on a remote system
-if echo $LANGUAGE | grep -q -- '-iso' ; then
+if echo "$LANGUAGE" | grep -q -- '-iso' ; then
    LC_CTYPE=C
 fi
 
 # read in the file where all the $LANGUAGE stuff is defined
-  . $LANGFUNC
+# shellcheck disable=SC1090
+. $LANGFUNC
 
 # make sure the file exists
 if ! [ -r $CONFFILE ] ; then
@@ -194,7 +204,7 @@ LANG=$LANG
 EOF
 fi
 
-setvalue 'LANG='     $LANG
+setvalue 'LANG='     "$LANG"
 
 retval=$?
 case $retval in

@@ -21,6 +21,7 @@ Usage: just execute $PN without any further options."
 fi
 
 if [ -r /etc/grml/script-functions ] ; then
+   # shellcheck disable=SC1091
    . /etc/grml/script-functions
    check4progs physlock sudo chpasswd dialog || { echo "Sorry, necessary tools missing - can not continue. Exiting.">&2 ; exit 1 ; }
 fi

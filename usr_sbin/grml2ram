@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Filename:      grml2ram
 # Purpose:       copy compressed GRML image to RAM
 # Authors:       (c) Michael Schierl <schierlm-public@gmx.de>, (c) Michael Prokop <mika@grml.org>
@@ -8,7 +8,9 @@
 
 set -e
 
+# shellcheck disable=SC1091
 . /etc/grml/lsb-functions
+# shellcheck disable=SC1091
 . /etc/grml/script-functions
 
 check4root || exit 1
@@ -50,7 +52,7 @@ getbootparam(){
 MEDIA_PATH="$(getbootparam live-media-path)"
 MEDIA_PATH="${MEDIA_PATH:-.}"
 
-IMAGE=$(find ${LIVECD_PATH}/${MEDIA_PATH}/ -name *.squashfs 2>/dev/null | head -1)
+IMAGE=$(find "${LIVECD_PATH}/${MEDIA_PATH}/" -name "*.squashfs" 2>/dev/null | head -1)
 if ! [ -r "$IMAGE" ] ; then
    if [ -r /cdrom/GRML/GRML ] ; then
       IMAGE='/cdrom/GRML/GRML'
@@ -68,7 +70,7 @@ case "$*" in -f|--force)
   ewarn "Forcing copy process for grml-image (${GRMLSIZE}kB) as requested via force option." ; eend 0
    ;;
   *)
-   if test $RAM -lt $GRMLSIZE ; then
+   if test "$RAM" -lt "$GRMLSIZE" ; then
       eerror "Sorry, not enough free RAM (${RAM}kB) available for grml-image (${GRMLSIZE}kB)." ; eend 1
       exit 1
    fi
@@ -96,7 +98,12 @@ fi
 [ -n "$GRMLDEV" ] || GRMLDEV='/dev/cdrom'
 
 einfo "Unmounting cdrom"
-[ -d $LIVECD_PATH ] && umount $LIVECD_PATH || umount /cdrom
+if [ -d $LIVECD_PATH ] ;
+then
+  umount $LIVECD_PATH
+else
+  umount /cdrom
+fi
 eend $?
 einfo "Now you can eject your grml-cd (e.g. run 'eject $GRMLDEV')." ; eend 0
 

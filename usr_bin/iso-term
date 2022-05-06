@@ -15,12 +15,10 @@ esac
 }
 
 if isutfenv ; then
-   for ENV in `env | grep UTF` ; do
-       eval export "$(echo $ENV | sed 's/UTF-8/iso885915/')"
+   for ENV in $(env | grep UTF) ; do
+       eval export "$(echo "$ENV" | sed 's/UTF-8/iso885915/')"
    done
-   ZSH_NO_DEFAULT_LOCALE=1 x-terminal-emulator $*
-else
-   ZSH_NO_DEFAULT_LOCALE=1 x-terminal-emulator $*
 fi
+ZSH_NO_DEFAULT_LOCALE=1 x-terminal-emulator "$@"
 
 ## END OF FILE #################################################################

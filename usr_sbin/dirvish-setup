@@ -13,7 +13,9 @@
 
 set -e
 
+# shellcheck disable=SC1091
 . /etc/grml/script-functions
+# shellcheck disable=SC1091
 . /etc/grml/lsb-functions
 
 check4root
@@ -71,7 +73,8 @@ EOF
 
 # TODO / integrate?
 cronsetup() {
-  test -f ~/.keychain/`uname -n`-sh && . ~/.keychain/`uname -n`-sh
+# shellcheck disable=SC1090
+  test -f "${HOME}/.keychain/$(uname -n)-sh" && . "${HOME}/.keychain/$(uname -n)-sh"
 }
 
 get_backup_dir() {
@@ -80,8 +83,9 @@ get_backup_dir() {
 
   if ! [ -d "$BACKUP_DIR" ] ; then
     dialog --stdout --title "${PN}" --yesno "The directory $BACKUP_DIR does not yet exist. Do you want me to create it for you? " 0 0
+    RC=$?
 
-    if [ $? -eq 0 ]; then
+    if [ ${RC} -eq 0 ]; then
        echo "mkdir $BACKUP_DIR"
        echo "chmod 700 $BACKUP_DIR"
     else
@@ -121,23 +125,25 @@ EOF
 }
 
 sshkey_setup() {
-  CLIENTNAME="$(dialog --stdout --inputbox 'Please choose user login and hostname for the client you want to backup. Syntax: user@host' 0 0 root@$(hostname))"
+  CLIENTNAME="$(dialog --stdout --inputbox 'Please choose user login and hostname for the client you want to backup. Syntax: user@host' 0 0 root@"$(hostname)")"
 
   dialog --stdout --title "${PN}" --yesno "Do you want me to create ssh setup for client ${CLIENTNAME} using ssh-keygen and ssh-copy-id?" 0 0
+  RC=$?
 
-  if [ $? -eq 0 ]; then
+  if [ ${RC} -eq 0 ]; then
      [ -d "$HOME/.ssh" ] || mkdir "$HOME/.ssh"
      einfo "Creating $HOME/.ssh/id_rsa_dirvish_${CLIENT} using ssh-keygen:"
      ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa_dirvish_${CLIENT}" ; eend $?
      einfo "Running ssh-copy-id to copy ssh key to $CLIENTNAME:"
-     ssh-copy-id -i "$HOME/.ssh/id_rsa_dirvish_${CLIENT}.pub" $CLIENTNAME ; eend $?
+     ssh-copy-id -i "$HOME/.ssh/id_rsa_dirvish_${CLIENT}.pub" "$CLIENTNAME" ; eend $?
   fi
 }
 
 client_setup() {
   dialog --stdout --title "${PN}" --yesno "Do you want to backup $CLIENT via network? Answering with no will use localhost [$(hostname)] as client." 0 0
+  RC=$?
 
-  if [ $? -eq 0 ]; then
+  if [ ${RC} -eq 0 ]; then
      sshkey_setup
   else
      CLIENTNAME=$(hostname) # use localhost only
@@ -148,7 +154,7 @@ display_info() {
   einfo "Running $PN was successful. Enjoy using dirvish!" ; eend 0
   echo
   einfo "Please adjust ${BACKUP_DIR}/${CLIENT}/dirvish/default.conf according to your needs.
-$MASTERINFO  
+$MASTERINFO
 Then run the following command to create an initial backup:
 
   dirvish --summary long --vault $CLIENT --init

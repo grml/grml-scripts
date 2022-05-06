@@ -6,6 +6,7 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
+# shellcheck disable=SC1091
 . /etc/grml/sh-lib
 
 [ -r /etc/grml_version ] && GRMLVERSION=$(cat /etc/grml_version) || GRMLVERSION='(no version information available)'
@@ -26,7 +27,7 @@ case "$CMDLINE" in
    # allow customized startup via bootoption startup:
    *startup=*)
        script="$(getBootParam startup)"
-       if [ -x $(which $script) ] ; then
+       if [ -x "$(command -v "$script")" ] ; then
           $script
        fi
        ;;
@@ -36,7 +37,7 @@ case "$CMDLINE" in
       ;;
    *) # by default run grml-quickconfig, but only if running as root
       if [ "$(id -u)" = "0" ] ; then
-         which grml-quickconfig &>/dev/null && grml-quickconfig
+         command -v grml-quickconfig &>/dev/null && grml-quickconfig
       fi
 esac
 

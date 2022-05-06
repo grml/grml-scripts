@@ -12,7 +12,7 @@ mkdir -m 700 "${SCREENDIR_}/S-$USER" >/dev/null 2>&1
 
 # now run screen with config
 
-  if [ `id -u` = 0 ] ; then
+  if [ "$(id -u)" = 0 ] ; then
     exec screen -U -c /etc/grml/screenrc
   elif [ -r "$HOME/.screenrc" ] ; then
     exec screen -U -c "$HOME/.screenrc"

@@ -7,10 +7,10 @@
 ################################################################################
 
 CONFFILE=/etc/default/keyboard
-PN="$(basename $0)"
+PN="$(basename "$0")"
 
 usage(){
-    echo "Usage: $0 <language>"
+    echo "Usage: ${PN} <language>"
     echo "supported values: at, ch, de, dvorak, es, fr, it, jp, us"
 }
 
@@ -26,6 +26,7 @@ fi
 
 LANGUAGE="$1"
 
+# shellcheck disable=SC1091
 . /etc/grml/language-functions
 
 if [ -n "$XKEYBOARD" ] ; then

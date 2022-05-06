@@ -1,0 +1,56 @@
+name: Code Testing
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '42 1 * * *'
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    name: Run spellcheck
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+
+    - name: Install lintian
+      run: sudo apt-get -y install lintian
+
+    - name: Spellcheck execution
+      run: make spellcheck
+
+  codecheck:
+    runs-on: ubuntu-latest
+    name: Run codecheck
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+
+    - name: Display original shellcheck version
+      run: shellcheck --version
+
+    - name: Update shellcheck to latest stable version
+      run: |
+        wget -qO- https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz | tar -xJv
+        sudo cp shellcheck-stable/shellcheck /usr/bin/
+
+    - name: pip install flake8, isort + black
+      run: pip3 install -U flake8 isort black
+
+    - name: Display current shellcheck version
+      run: shellcheck --version
+
+    - name: Display current flake8 version
+      run: flake8 --version
+
+    - name: Display current isort version
+      run: isort --version
+
+    - name: Display current black version
+      run: black --version
+
+    - name: Codecheck execution
+      run: make --keep-going codecheck

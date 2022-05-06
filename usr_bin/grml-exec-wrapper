@@ -6,15 +6,16 @@
 # License:       This file is licensed under the GPL v2 or any later version.
 ################################################################################
 
+PN=$(basename "$0")
+
 usage() {
-  printf "Usage: $0 <program> [<arguments>]
+  printf "Usage: %s <program> [<arguments>]
 
 Available options:
 
   -h | --help   display this usage information
   -p <program>  check specified argument instead of default args, like:
-                $(basename $0) -p aumix xterm -T aumix -e aumix
-"
+                %s -p aumix xterm -T aumix -e aumix\n" "${PN}" "${PN}"
 }
 
 is_installed() {
@@ -49,7 +50,7 @@ else
 fi
 }
 
-if [ -z "$1" -o "$1" = '-h' -o "$1" = '--help' ] ; then
+if [ -z "$1" ] || [ "$1" = '-h' ] || [ "$1" = '--help' ] ; then
     usage
     exit 1
 fi
@@ -80,7 +81,7 @@ Looks like the grml flavour you are using does not ship ${PROG}. :(
 
 You can search for ${PROG} executing:
 
-apt-get update && apt-cache search $(basename ${PROG})
+apt-get update && apt-cache search $(basename "${PROG}")
     "
 
 exit 1

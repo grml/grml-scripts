@@ -6,7 +6,7 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
-if ! [ $(which speaker-test) ] ; then
+if ! [ "$(command -v speaker-test)" ] ; then
   echo "Sorry, speaker-test (from alsa-utils) not available.">&2
   exit 1
 fi

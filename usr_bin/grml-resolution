@@ -6,13 +6,13 @@
 # License:       This file is licensed under the GPL v2.
 ################################################################################
 
-PN=$(basename $0)
+PN="$(basename "$0")"
 RESOLUTION=$(mktemp)
 ERROR=$(mktemp)
 
 bailout(){
-  rm -f $RESOLUTION $ERROR
-  exit $1
+  rm -f "$RESOLUTION" "$ERROR"
+  exit "$1"
 }
 
 trap bailout 1 2 3 15
@@ -27,27 +27,29 @@ CURRENT_NUM=$(xrandr | awk '/\*/ {print $1}' | tr -d '*')
 CURRENT_RESOLUTION=$(xrandr | awk '/\*/ {print $2 $3 $4}')
 
 # menu
-for i in $(xrandr | awk {'print $2$3$4'} | grep "^[0-9]") ; do
+for i in $(xrandr | awk '{print $2$3$4}' | grep "^[0-9]") ; do
   STRING="$STRING $COUNTER $i"
   ((COUNTER++))
 done
 
 # Menu Tool
-dialog --title "$PN" --menu "Change X resolution via xrandr (current resolution: $CURRENT_RESOLUTION):" 0 0 0 $STRING 2>$RESOLUTION
+# shellcheck disable=SC2086
+dialog --title "$PN" --menu "Change X resolution via xrandr (current resolution: $CURRENT_RESOLUTION):" 0 0 0 $STRING 2>"$RESOLUTION"
 retval=$?
 case $retval in
       (1)   echo "Cancel pressed." ; exit 1 ;;
       (255) echo "ESC pressed."    ; exit 1 ;;
 esac
 
-CHOSE=$(cat $RESOLUTION)
+CHOSE=$(cat "$RESOLUTION")
 
 if [ "$CHOSE" = "$CURRENT_NUM" ] ; then
    dialog --title "$PN" --msgbox "Chosen resolution corresponds to current resolution. No changes needed." 0 0
 elif [ -n "$CHOSE" ] ; then
-  xrandr -s $CHOSE 2>$ERROR && \
+# shellcheck disable=SC2015
+  xrandr -s "$CHOSE" 2>"$ERROR" && \
   dialog --title "$PN" --msgbox "Running xrandr with resolution was succesful." 0 0 || \
-  dialog --title "$PN" --msgbox "Error when running xrandr with resolution $CHOSE: `cat $ERROR`" 0 0
+  dialog --title "$PN" --msgbox "Error when running xrandr with resolution $CHOSE: $(cat "$ERROR")" 0 0
 fi
 }
 
@@ -55,6 +57,6 @@ while true ; do
   main
 done
 
-bailout
+bailout 0
 
 # EOF #
