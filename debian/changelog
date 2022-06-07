@@ -1,3 +1,10 @@
+grml-scripts (2.11.1) unstable; urgency=medium
+
+  * [40ec66c] Drop debian/compat and switch to debhelper-compat approach
+  * [3b7f948] grml_chroot: fix broken mount argument handling
+
+ -- Michael Prokop <mika@grml.org>  Tue, 07 Jun 2022 15:59:26 +0200
+
 grml-scripts (2.11.0) unstable; urgency=medium
 
   [ Darshaka Pathirana ]
