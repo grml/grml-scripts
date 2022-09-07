@@ -1004,7 +1004,7 @@ function update_description_names() {
    find_all_images
    for i in $ALL_IMAGES ; do
 
-      if ! egrep "$i=" ./description >/dev/null ; then
+      if ! grep -E "$i=" ./description >/dev/null ; then
          echo "$i=`description $i`" >> ./description
       fi
 
