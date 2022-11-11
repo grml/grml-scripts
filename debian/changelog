@@ -1,3 +1,9 @@
+grml-scripts (2.11.2) unstable; urgency=medium
+
+  * [454a3e5] iimage: replace egrep usage with grep -E
+
+ -- Michael Prokop <mika@grml.org>  Fri, 11 Nov 2022 17:01:40 +0100
+
 grml-scripts (2.11.1) unstable; urgency=medium
 
   * [40ec66c] Drop debian/compat and switch to debhelper-compat approach
