@@ -1,3 +1,10 @@
+grml-scripts (2.12.1) unstable; urgency=medium
+
+  [ Darshaka Pathirana ]
+  * [b382566] grml-resolution: Quick 'n dirty xrandr output parser fix
+
+ -- Michael Prokop <mika@grml.org>  Mon, 28 Nov 2022 08:35:17 +0100
+
 grml-scripts (2.12.0) unstable; urgency=medium
 
   [ Darshaka Pathirana ]
