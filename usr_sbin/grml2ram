@@ -65,6 +65,7 @@ fi
 
 GRMLSIZE="$(du $IMAGE | awk '{print $1}')"
 RAM=$(/usr/bin/gawk '/MemFree/{print $2}' /proc/meminfo)
+LOOPDEV=$(/sbin/losetup -j "${IMAGE}" -n -O NAME)
 
 case "$*" in -f|--force)
   ewarn "Forcing copy process for grml-image (${GRMLSIZE}kB) as requested via force option." ; eend 0
@@ -80,7 +81,7 @@ esac
 einfo "Copying $IMAGE to RAM, this might take a while."
 rsync -a --progress $IMAGE /tmp/GRML
 LANGUAGE=C LANG=C LC_ALL=C perl << EOF
-open LOOP, '</dev/loop0' or die $!;
+open LOOP, '<${LOOPDEV}' or die $!;
 open DEST, '</tmp/GRML' or die $!;
 ioctl(LOOP, 0x4C06, fileno(DEST)) or die $!;
 close LOOP;
