@@ -1,3 +1,10 @@
+grml-scripts (2.12.2) unstable; urgency=medium
+
+  [ Michael Schierl ]
+  * [099f921] Fix `grml2ram` when booted via `loopback.cfg`
+
+ -- Michael Prokop <mika@grml.org>  Fri, 03 Feb 2023 17:26:26 +0100
+
 grml-scripts (2.12.1) unstable; urgency=medium
 
   [ Darshaka Pathirana ]
