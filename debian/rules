@@ -39,7 +39,6 @@ install: build
 	cp -a usr_bin/*         debian/grml-scripts/usr/bin/
 	cp -a usr_sbin/*        debian/grml-scripts/usr/sbin/
 	cp -a usr_share/*       debian/grml-scripts/usr/share/grml-scripts/
-	install -m 755 compile/vmware-detect          debian/grml-scripts/usr/bin/vmware-detect
 	install -m 755 compile/dpkg_not_running       debian/grml-scripts/usr/sbin/dpkg_not_running
 	install -m 755 compile/grml-runtty            debian/grml-scripts/sbin/grml-runtty
 
@@ -85,7 +84,7 @@ binary-arch: build install
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/pong.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/soundtest.1.gz \
 		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/unblacklist.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/vmware-detect.1.gz
+
 	dh_strip
 	dh_compress
 	mkdir -p $(CURDIR)/debian/grml-scripts/usr/share/lintian/overrides/
