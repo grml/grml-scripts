@@ -1,3 +1,10 @@
+grml-scripts (2.13.0) unstable; urgency=medium
+
+  * [0c1cd5d] Drop broken and deprecated vmware-detect.
+    Thanks to András Korn
+
+ -- Michael Prokop <mika@grml.org>  Wed, 06 Sep 2023 17:24:49 +0200
+
 grml-scripts (2.12.2) unstable; urgency=medium
 
   [ Michael Schierl ]
