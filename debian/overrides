@@ -1,2 +1,0 @@
-grml-scripts: script-with-language-extension usr/bin/notifyd.py
-grml-scripts: statically-linked-binary usr/sbin/dpkg_not_running

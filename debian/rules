@@ -1,100 +1,15 @@
 #!/usr/bin/make -f
-# -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# GNU copyright 1997 to 1999 by Joey Hess.
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+%:
+	dh $@
 
-build: build-arch build-indep
-
-build-arch: build-stamp
-
-build-indep: build-stamp
-
-build-stamp:
-	dh_testdir
-	( cd $(CURDIR)/compile/ && make )
-	touch build-stamp
-
-clean:
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp
-
-	# Add here commands to clean up after the build process.
+override_dh_auto_clean:
 	rm -rf $(CURDIR)/debian/grml-scripts/
-	( cd compile && make clean )
-	( cd doc && make clean )
+	make -C doc clean
+	dh_auto_clean
 
-	dh_clean
+override_dh_auto_configure:
 
-install: build
-	dh_testdir
-	dh_testroot
-	dh_prep
-	dh_installdirs
+override_dh_auto_build:
+	make -C doc doc_man
 
-	# Add here commands to install the package into debian/grml-scripts.
-	cp -a usr_bin/*         debian/grml-scripts/usr/bin/
-	cp -a usr_sbin/*        debian/grml-scripts/usr/sbin/
-	cp -a usr_share/*       debian/grml-scripts/usr/share/grml-scripts/
-	install -m 755 compile/dpkg_not_running       debian/grml-scripts/usr/sbin/dpkg_not_running
-	install -m 755 compile/grml-runtty            debian/grml-scripts/sbin/grml-runtty
-
-# Build architecture-independent files here.
-binary-indep: build install
-	( cd $(CURDIR)/doc && make doc_man )
-
-# Build architecture-dependent files here.
-binary-arch: build install
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs
-	dh_installdocs
-	dh_installman $(wildcard doc/*.gz)
-	dh_installman $(wildcard manpages/*.1) $(wildcard manpages/*.8)
-	dh_link /usr/bin/soundtest /usr/bin/grml-soundtest
-	dh_link /usr/sbin/blacklist /usr/sbin/unblacklist
-	dh_link \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/blacklist.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/caps-ctrl.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/dpkg_not_running.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grepc.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grepedit.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-config.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-config-root.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-hostname.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-info.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-init.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-lock.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-soundtest.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-lang.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-resolution.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-runtty.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/iimage.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/logview.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/mailhops.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/make_chroot_jail.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/myip.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/noeject.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/noprompt.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/osd_server.py.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/notifyd.py.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/pong.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/soundtest.1.gz \
-		/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/unblacklist.1.gz \
-
-	dh_strip
-	dh_compress
-	mkdir -p $(CURDIR)/debian/grml-scripts/usr/share/lintian/overrides/
-	cp -av debian/overrides $(CURDIR)/debian/grml-scripts/usr/share/lintian/overrides/grml-scripts
-	dh_fixperms
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install

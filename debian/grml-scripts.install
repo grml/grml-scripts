@@ -1,0 +1,3 @@
+usr_bin/* usr/bin/
+usr_sbin/* usr/sbin/
+usr_share/* usr/share/grml-scripts/
