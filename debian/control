@@ -34,8 +34,8 @@ Suggests: alsa-utils,
           idesk,
           lzop,
           notification-daemon,
-          python,
-          python-dbus,
+          python3,
+          python3-dbus,
           sudo
 Description: Collection of little tools
  This package contains a lot of scripts and is only really suited
