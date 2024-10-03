@@ -14,7 +14,7 @@ Origin: Grml
 Bugs: mailto:bugs@grml.org
 
 Package: grml-scripts
-Architecture: any
+Architecture: all
 Depends: dash,
          dialog,
          grml-etc-core,
