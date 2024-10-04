@@ -2,42 +2,45 @@ Source: grml-scripts
 Section: utils
 Priority: optional
 Maintainer: Michael Prokop <mika@grml.org>
-Build-Depends: asciidoc,
-               debhelper-compat (= 12),
-               dietlibc-dev,
-               docbook-xsl,
-               xsltproc
+Build-Depends:
+ asciidoc,
+ debhelper-compat (= 12),
+ docbook-xsl,
+ xsltproc,
 Standards-Version: 4.3.0
-Homepage: https://git.grml.org/?p=grml-scripts.git
-Vcs-git: git://git.grml.org/grml-scripts.git
-Vcs-Browser: https://git.grml.org/?p=grml-scripts.git
+Homepage: https://github.com/grml/grml-scripts
+Vcs-Git: https://github.com/grml/grml-scripts
+Vcs-Browser: https://github.com/grml/grml-scripts
 Origin: Grml
 Bugs: mailto:bugs@grml.org
 
 Package: grml-scripts
-Architecture: any
-Depends: dash,
-         dialog,
-         grml-etc-core,
-         links | w3m | links2,
-         perl,
-         screen,
-         zsh,
-         ${misc:Depends},
-         ${shlibs:Depends}
-Recommends: physlock
-Suggests: alsa-utils,
-          dirvish,
-          grml-files,
-          grml-network,
-          grml-quickconfig,
-          grml-rebuildfstab,
-          idesk,
-          lzop,
-          notification-daemon,
-          python,
-          python-dbus,
-          sudo
+Architecture: all
+Depends:
+ dash,
+ dialog,
+ grml-etc-core,
+ links | w3m | links2,
+ perl,
+ screen,
+ zsh,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends:
+ physlock,
+Suggests:
+ alsa-utils,
+ dirvish,
+ grml-files,
+ grml-network,
+ grml-quickconfig,
+ grml-rebuildfstab,
+ idesk,
+ lzop,
+ notification-daemon,
+ python3,
+ python3-dbus,
+ sudo,
 Description: Collection of little tools
  This package contains a lot of scripts and is only really suited
  for full Grml systems. It provides, amongst others: iimage,

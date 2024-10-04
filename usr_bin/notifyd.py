@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # Copyright (C) 2005-2009 Alexander Bernauer <alex@copton.net>
 # Copyright (C) 2005-2009 Rico Schiekel <fire@downgra.de>
