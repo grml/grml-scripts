@@ -1,3 +1,15 @@
+grml-scripts (2.14.0) unstable; urgency=medium
+
+  [ Chris Hofstaedtler ]
+  * [6b4d4ed] debian: Use dh sequencer, drop binary programs
+  * [875d430] Update lintian-overrides
+  * [f6cb65c] Make package Architecture: all
+  * [8bdbf69] Use /usr/bin/python3 as interpreter for python scripts
+  * [0e5ae18] Update Homepage, Vcs-* URLs
+  * [4718e3a] debian: Apply wrap-and-sort -kast
+
+ -- Michael Prokop <mika@grml.org>  Sat, 19 Oct 2024 17:37:46 +0200
+
 grml-scripts (2.13.0) unstable; urgency=medium
 
   * [0c1cd5d] Drop broken and deprecated vmware-detect.
