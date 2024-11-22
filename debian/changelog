@@ -1,3 +1,15 @@
+grml-scripts (2.14.1) unstable; urgency=medium
+
+  [ Michael Prokop ]
+  * [881961e] grml-lang: support language settings for UK/GB
+
+  [ Chris Hofstaedtler ]
+  * [b1c5479] Stop building binary packages using root
+  * [9c1b2c2] d/control: bump Standards-Version to 4.7.0
+  * [a54cbd6] Ship debian/gbp.conf for gbp usage
+
+ -- Chris Hofstaedtler <ch@grml.org>  Fri, 22 Nov 2024 23:06:48 +0100
+
 grml-scripts (2.14.0) unstable; urgency=medium
 
   [ Chris Hofstaedtler ]
