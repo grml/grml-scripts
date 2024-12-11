@@ -40,7 +40,7 @@ case $retval in
           exec grml-setlang
         fi
         if [ "$MENU" = "grml-setkeyboard" ]; then
-          exec grml-setkeyboard
+          dpkg-reconfigure keyboard-configuration && exec systemctl restart console-setup.service
         fi
         if [ "$MENU" = "grml-network" ]; then
           exec grml-network
