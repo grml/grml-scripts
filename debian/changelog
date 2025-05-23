@@ -1,3 +1,9 @@
+grml-scripts (2.14.3) unstable; urgency=medium
+
+  * [3a38146] Add Depends: beep for run-welcome
+
+ -- Chris Hofstaedtler <ch@grml.org>  Fri, 23 May 2025 13:47:16 +0200
+
 grml-scripts (2.14.2) unstable; urgency=medium
 
   * [9ac2d55] grml-setkeyboard: deprecate
