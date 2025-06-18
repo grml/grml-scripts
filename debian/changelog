@@ -1,3 +1,10 @@
+grml-scripts (2.14.4) unstable; urgency=medium
+
+  * [e0faab3] Remove grml-config-root
+  * [a398d37] Move grml-lang, grml-setlang to grml-live
+
+ -- Chris Hofstaedtler <ch@grml.org>  Wed, 18 Jun 2025 21:17:48 +0200
+
 grml-scripts (2.14.3) unstable; urgency=medium
 
   * [3a38146] Add Depends: beep for run-welcome
