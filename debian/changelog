@@ -1,3 +1,9 @@
+grml-scripts (2.14.5) unstable; urgency=medium
+
+  * [e8b40ce] Move run-welcome to grml-live
+
+ -- Chris Hofstaedtler <ch@grml.org>  Fri, 20 Jun 2025 00:47:23 +0200
+
 grml-scripts (2.14.4) unstable; urgency=medium
 
   * [e0faab3] Remove grml-config-root
