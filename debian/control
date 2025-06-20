@@ -35,7 +35,6 @@ Suggests:
  grml-network,
  grml-quickconfig,
  grml-rebuildfstab,
- idesk,
  lzop,
  notification-daemon,
  python3,
