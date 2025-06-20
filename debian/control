@@ -32,7 +32,6 @@ Recommends:
 Suggests:
  alsa-utils,
  dirvish,
- grml-files,
  grml-network,
  grml-quickconfig,
  grml-rebuildfstab,
