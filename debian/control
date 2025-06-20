@@ -18,7 +18,6 @@ Rules-Requires-Root: no
 Package: grml-scripts
 Architecture: all
 Depends:
- beep,
  dash,
  dialog,
  grml-etc-core,
@@ -33,11 +32,8 @@ Recommends:
 Suggests:
  alsa-utils,
  dirvish,
- grml-files,
  grml-network,
  grml-quickconfig,
- grml-rebuildfstab,
- idesk,
  lzop,
  notification-daemon,
  python3,

@@ -15,8 +15,6 @@
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/mailhops.1.gz
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/make_chroot_jail.1.gz
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/myip.1.gz
-/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/noeject.1.gz
-/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/noprompt.1.gz
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/notifyd.py.1.gz
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/osd_server.py.1.gz
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/pong.1.gz
