@@ -34,7 +34,6 @@ Suggests:
  dirvish,
  grml-network,
  grml-quickconfig,
- grml-rebuildfstab,
  lzop,
  notification-daemon,
  python3,
