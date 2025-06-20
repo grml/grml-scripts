@@ -1,3 +1,16 @@
+grml-scripts (2.14.6) unstable; urgency=medium
+
+  * [1e0f046] Remove leftover symlink
+  * [2e25b1c] noeject: drop
+  * [0546f4e] noprompt: drop
+  * [09cdb66] run-multitail: drop
+  * [b18e948] Drop Depends: beep
+  * [a98fe98] Drop Suggests: grml-files
+  * [3e62739] Drop Suggests: idesk
+  * [4674b3e] Drop Suggests: grml-rebuildfstab
+
+ -- Chris Hofstaedtler <ch@grml.org>  Sat, 21 Jun 2025 00:48:04 +0200
+
 grml-scripts (2.14.5) unstable; urgency=medium
 
   * [e8b40ce] Move run-welcome to grml-live
