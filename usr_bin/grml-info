@@ -20,23 +20,9 @@ fi
 . /etc/grml/script-functions
 
 # do we have X?
-if [ -n "$DISPLAY" ] ; then
-   if check4progs dillo &>/dev/null ; then
-     dillo $PAGE
-   elif check4progs xlinks2 &>/dev/null ; then
-     xlinks2 -mode 640x480 $PAGE
-   elif check4progs firefox &>/dev/null ; then
-     firefox $PAGE
-   elif check4progs x-www-browser &>/dev/null ; then
-     x-www-browser $PAGE
-   elif check4progs zenity &>/dev/null ; then
-     zenity --no-wrap --error --text="Sorry, no usable X browser (dillo, xlinks2, firefox,...) found."
-     exit 1
-   elif check4progs Xdialog &>/dev/null ; then
-     Xdialog --msgbox "Sorry, no usable X browser (dillo, xlinks2, firefox,...) found." 0 0
-     exit 1
-   fi
-else # no X:
+if [ -n "$DISPLAY" ] && check4progs x-www-browser &>/dev/null ; then
+   exec x-www-browser $PAGE
+else  # no X: (or no x-www-browser)
    # do we have a real console?
    if [[ $(tty) == /dev/tty* ]] ; then
       # do we have framebuffer support?
