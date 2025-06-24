@@ -1,3 +1,12 @@
+grml-scripts (2.14.7) unstable; urgency=medium
+
+  * [e41fffb] grml-setservices: drop
+  * [9a07cb1] grml-exec-wrapper: drop
+  * [d0de0c6] iso-term: drop
+  * [a3348f9] grml-info: in X11 always use x-www-browser
+
+ -- Chris Hofstaedtler <ch@grml.org>  Tue, 24 Jun 2025 22:11:15 +0200
+
 grml-scripts (2.14.6) unstable; urgency=medium
 
   * [1e0f046] Remove leftover symlink
