@@ -11,8 +11,6 @@ codecheck: shellcheck pythoncheck ## Run shellcheck and pythoncheck
 shellcheck: ## Run shellcheck
 	@RETURN=0
 	@for shellfile in $$(ls usr_bin/* usr_sbin/* usr_share/*); do
-	@	[ "$${shellfile}" = "usr_bin/iimage" ] && continue
-	@	[ "$${shellfile}" = "usr_sbin/make_chroot_jail" ] && continue
 	@	file "$${shellfile}" | grep -q shell && (shellcheck -x "$${shellfile}" || RETURN=1)
 	@done
 	@exit $${RETURN}
