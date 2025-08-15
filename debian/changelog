@@ -1,3 +1,9 @@
+grml-scripts (2.14.8) unstable; urgency=medium
+
+  * [c11be38] grml-info: drop fb support
+
+ -- Chris Hofstaedtler <ch@grml.org>  Fri, 15 Aug 2025 15:35:23 +0200
+
 grml-scripts (2.14.7) unstable; urgency=medium
 
   * [e41fffb] grml-setservices: drop
