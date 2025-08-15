@@ -21,46 +21,19 @@ fi
 
 # do we have X?
 if [ -n "$DISPLAY" ] && check4progs x-www-browser &>/dev/null ; then
-   exec x-www-browser $PAGE
-else  # no X: (or no x-www-browser)
-   # do we have a real console?
-   if [[ $(tty) == /dev/tty* ]] ; then
-      # do we have framebuffer support?
-      if [ -c /dev/fb0 ] ; then
-         if check4progs links2 &>/dev/null ; then
-            links2 -driver fb $PAGE
-         elif check4progs w3m &>/dev/null; then
-            w3m $PAGE
-         elif check4progs links &>/dev/null ; then
-            links $PAGE
-         else
-            echo "Sorry, neither links2 nor w3m nor links available. Exiting.">&2
-            exit 1
-         fi
-      else # no, we don't have framebuffer
-         if check4progs w3m &>/dev/null ; then
-            w3m $PAGE
-         elif check4progs links &>/dev/null ; then
-            links $PAGE
-         elif check4progs links2 &>/dev/null ; then
-            links2 $PAGE
-         else
-            echo "Sorry, neither w3m nor links nor links2 available. Exiting.">&2
-            exit 1
-         fi
-      fi
-   else # no, probably we are running inside GNU screen
-      if check4progs w3m &>/dev/null ; then
-         w3m $PAGE
-      elif check4progs links2 &>/dev/null ; then
-         links2 $PAGE
-      elif check4progs links &>/dev/null ; then
-         links $PAGE
-      else
-         echo "Sorry, neither w3m nor links2 nor links available. Exiting.">&2
-         exit 1
-      fi
-   fi
+  exec x-www-browser $PAGE
+else
+  # no X: (or no x-www-browser)
+  if check4progs links2 &>/dev/null ; then
+    links2 $PAGE
+  elif check4progs w3m &>/dev/null; then
+    w3m $PAGE
+  elif check4progs links &>/dev/null ; then
+    links $PAGE
+  else
+    echo "Sorry, neither links2 nor w3m nor links available. Exiting.">&2
+    exit 1
+  fi
 fi
 
 ## END OF FILE #################################################################
