@@ -1,3 +1,12 @@
+grml-scripts (2.14.9) unstable; urgency=medium
+
+  * [3f73b4c] Remove grml-swapon
+  * [50e2f98] Remove reference to removed grml-scripts-core
+  * [209191f] Drop grepc, grepedit, iimage, logview, mailhops, notifyd,
+    osd_server, qma, dirvish-setup, grml-iptstate, make_chroot_jail
+
+ -- Chris Hofstaedtler <ch@grml.org>  Fri, 15 Aug 2025 22:47:56 +0200
+
 grml-scripts (2.14.8) unstable; urgency=medium
 
   * [c11be38] grml-info: drop fb support
