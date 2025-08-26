@@ -21,19 +21,15 @@ fi
 
 # do we have X?
 if [ -n "$DISPLAY" ] && check4progs x-www-browser &>/dev/null ; then
-  exec x-www-browser $PAGE
-else
+  exec x-www-browser "$PAGE"
+elif check4progs links &>/dev/null ; then
   # no X: (or no x-www-browser)
-  if check4progs links2 &>/dev/null ; then
-    links2 $PAGE
-  elif check4progs w3m &>/dev/null; then
-    w3m $PAGE
-  elif check4progs links &>/dev/null ; then
-    links $PAGE
-  else
-    echo "Sorry, neither links2 nor w3m nor links available. Exiting.">&2
-    exit 1
-  fi
+  exec links "$PAGE"
+elif check4progs www-browser &>/dev/null ; then
+  exec www-browser "$PAGE"
 fi
+
+echo "Sorry, no browser available. Exiting.">&2
+exit 1
 
 ## END OF FILE #################################################################
