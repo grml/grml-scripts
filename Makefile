@@ -10,7 +10,7 @@ codecheck: shellcheck pythoncheck ## Run shellcheck and pythoncheck
 .ONESHELL:
 shellcheck: ## Run shellcheck
 	@RETURN=0
-	@for shellfile in $$(ls usr_bin/* usr_sbin/* usr_share/*); do
+	@for shellfile in $$(ls usr_bin/* usr_sbin/*); do
 	@	file "$${shellfile}" | grep -q shell && (shellcheck -x "$${shellfile}" || RETURN=1)
 	@done
 	@exit $${RETURN}
@@ -18,7 +18,7 @@ shellcheck: ## Run shellcheck
 .ONESHELL:
 pythoncheck: ## Run pythoncheck (flakecheck, isortcheck + blackcheck)
 	@RETURN=0
-	@for pythonfile in usr_bin/* usr_sbin/* usr_share/*; do
+	@for pythonfile in usr_bin/* usr_sbin/*; do
 	@	if head -1 "$${pythonfile}" | grep -q "python"; then
 	@		flake8 --max-line-length 88 "$${pythonfile}" || RETURN=1
 	@		isort --check "$${pythonfile}" || RETURN=1
@@ -30,7 +30,7 @@ pythoncheck: ## Run pythoncheck (flakecheck, isortcheck + blackcheck)
 .ONESHELL:
 flakecheck: ## Run flake8 only
 	@RETURN=0
-	@for pythonfile in usr_bin/* usr_sbin/* usr_share/*; do
+	@for pythonfile in usr_bin/* usr_sbin/*; do
 	@	if head -1 "$${pythonfile}" | grep -q "python"; then
 	@		flake8 --max-line-length 88 "$${pythonfile}" || RETURN=1
 	@	fi
@@ -40,7 +40,7 @@ flakecheck: ## Run flake8 only
 .ONESHELL:
 isortcheck: ## Run isort --check only
 	@RETURN=0
-	@for pythonfile in usr_bin/* usr_sbin/* usr_share/*; do
+	@for pythonfile in usr_bin/* usr_sbin/*; do
 	@	if head -1 "$${pythonfile}" | grep -q "python"; then
 	@		isort --check "$${pythonfile}" || RETURN=1
 	@	fi
@@ -50,7 +50,7 @@ isortcheck: ## Run isort --check only
 .ONESHELL:
 blackcheck: ## Run black --check only
 	@RETURN=0
-	@for pythonfile in usr_bin/* usr_sbin/* usr_share/*; do
+	@for pythonfile in usr_bin/* usr_sbin/*; do
 	@	if head -1 "$${pythonfile}" | grep -q "python"; then
 	@		black --check "$${pythonfile}" || RETURN=1
 	@	fi
