@@ -1,3 +1,9 @@
+grml-scripts (2.14.11) unstable; urgency=medium
+
+  * [9e48873] Remove grml-info, moved to grml-live
+
+ -- Chris Hofstaedtler <ch@grml.org>  Thu, 11 Dec 2025 23:14:18 +0100
+
 grml-scripts (2.14.10) unstable; urgency=medium
 
   * [34c25c4] Remove run-screen, run-journalctl
