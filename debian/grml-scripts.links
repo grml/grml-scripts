@@ -1,12 +1,4 @@
-/usr/bin/soundtest /usr/bin/grml-soundtest
-/usr/sbin/blacklist /usr/sbin/unblacklist
-/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/blacklist.1.gz
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/caps-ctrl.1.gz
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-hostname.1.gz
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-init.1.gz
-/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-lock.1.gz
-/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-resolution.1.gz
-/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/grml-soundtest.1.gz
 /usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/myip.1.gz
-/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/soundtest.1.gz
-/usr/share/man/man1/grml-scripts.1.gz /usr/share/man/man1/unblacklist.1.gz

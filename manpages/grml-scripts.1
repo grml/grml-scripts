@@ -17,27 +17,17 @@ Switch keyboard settings of key known as "Caps-Lock" between
 using Caps-Lock either as control- or shift-key. Notice:
 running caps-ctrl on console requires root-permissions,
 running it in X window system works as normal user.
-.SS grml-lock
-lock virtual consoles
-.SS grml-resolution
-change X resolution via a simple menu frontend
 .SS myip
 return IP address of running system on stdout (requires network access)
-.SS soundtest
-Legacy wrapper for speaker-test.
 
 .SH "ADMIN SCRIPTS"
 
-.SS blacklist
-Blacklist module via module-init-tools (/etc/modprobe.d/grml).
 .SS grml-hostname
 Simple frontend to configure hostname in the corresponding
 files. When executed without a parameter a dialog based
 frontend will be used, when given a parameter the provided
 parameter will be used as hostname and script is executed in
 non-interactive mode.
-.SS unblacklist
-Remove blacklisted module from /etc/modprobe.d/grml.
 
 .SH "BUGS"
 Probably. Please report any bugs you find and report
