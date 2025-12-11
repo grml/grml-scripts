@@ -1,3 +1,11 @@
+grml-scripts (2.14.12) unstable; urgency=medium
+
+  * [b452633] Remove scripts moved to grml-live
+  * [b5d013c] Remove myip, was turned into a zshrc function
+  * [96d71c8] d/grml-scripts.manpages: remove obsolete manpages/*.8 install
+
+ -- Chris Hofstaedtler <ch@grml.org>  Fri, 12 Dec 2025 00:37:17 +0100
+
 grml-scripts (2.14.11) unstable; urgency=medium
 
   * [9e48873] Remove grml-info, moved to grml-live
