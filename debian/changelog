@@ -1,3 +1,9 @@
+grml-scripts (2.15.1) unstable; urgency=medium
+
+  * [70fb272] Turn into an empty transitional package
+
+ -- Chris Hofstaedtler <ch@grml.org>  Thu, 12 Feb 2026 18:45:11 +0100
+
 grml-scripts (2.15.0) unstable; urgency=medium
 
   The "almost replaced" release. This package is now mostly empty,
