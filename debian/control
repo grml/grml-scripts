@@ -5,8 +5,6 @@ Maintainer: Michael Prokop <mika@grml.org>
 Build-Depends:
  asciidoc,
  debhelper-compat (= 12),
- docbook-xsl,
- xsltproc,
 Standards-Version: 4.7.0
 Homepage: https://github.com/grml/grml-scripts
 Vcs-Git: https://github.com/grml/grml-scripts

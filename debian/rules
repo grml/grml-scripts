@@ -5,11 +5,9 @@
 
 override_dh_auto_clean:
 	rm -rf $(CURDIR)/debian/grml-scripts/
-	make -C doc clean
 	dh_auto_clean
 
 override_dh_auto_configure:
 
 override_dh_auto_build:
-	make -C doc doc_man
 
