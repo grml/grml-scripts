@@ -1,9 +1,8 @@
 Source: grml-scripts
-Section: utils
+Section: oldlibs
 Priority: optional
 Maintainer: Michael Prokop <mika@grml.org>
 Build-Depends:
- asciidoc,
  debhelper-compat (= 12),
 Standards-Version: 4.7.0
 Homepage: https://github.com/grml/grml-scripts
@@ -16,28 +15,7 @@ Rules-Requires-Root: no
 Package: grml-scripts
 Architecture: all
 Depends:
- dialog,
- grml-etc-core,
- links | w3m | links2,
- perl,
- screen,
- zsh,
  ${misc:Depends},
- ${shlibs:Depends},
-Recommends:
- physlock,
-Suggests:
- alsa-utils,
- grml-network,
- grml-quickconfig,
- sudo,
-Description: Collection of little tools
- This package contains a lot of scripts and is only really suited
- for full Grml systems.
- .
- Notice: not all the packages which are required for all the
- scripts are in the "Depends:" line. If you want to get a full
- featured grml-scripts package install the packages from the
- "Suggests:" line too or just use the full Grml system.
- .
- For more details take a look at the grml-scripts manpage.
+Description: transitional package
+ This is a transitional package. It can safely be removed.
+ All scripts have been moved to grml-etc-core and grml-live.

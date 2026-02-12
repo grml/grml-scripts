@@ -3,10 +3,6 @@
 %:
 	dh $@
 
-override_dh_auto_clean:
-	rm -rf $(CURDIR)/debian/grml-scripts/
-	dh_auto_clean
-
 override_dh_auto_configure:
 
 override_dh_auto_build:
