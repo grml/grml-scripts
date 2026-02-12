@@ -1,3 +1,15 @@
+grml-scripts (2.15.0) unstable; urgency=medium
+
+  The "almost replaced" release. This package is now mostly empty,
+  and the scripts are now either in grml-live or in grml-etc-core.
+
+  * [5ad7705] Remove grml-hostname, was moved to grml-live
+  * [a1ecfb2] Remove grml-chroot, was moved to grml-etc-core
+  * [74709a8] Remove empty doc/ dir
+  * [ace0b41] Remove obsolete grml-init manpage symlink
+
+ -- Chris Hofstaedtler <ch@grml.org>  Thu, 12 Feb 2026 16:04:50 +0100
+
 grml-scripts (2.14.12) unstable; urgency=medium
 
   * [b452633] Remove scripts moved to grml-live
